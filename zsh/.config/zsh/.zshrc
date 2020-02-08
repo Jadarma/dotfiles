@@ -4,6 +4,9 @@ for plugin in $ZDOTDIR/plugins/*.plugin.zsh; do
     source "$plugin"
 done
 
+# Set theme
+source "$ZDOTDIR/themes/minimal.theme.zsh"
+
 # Command Completion
 mkdir -p --mode=700 "$XDG_CACHE_HOME/zsh"
 autoload -Uz compinit
