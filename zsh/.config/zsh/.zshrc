@@ -1,4 +1,9 @@
 
+# Load plugins
+for plugin in $ZDOTDIR/plugins/*.plugin.zsh; do
+    source "$plugin"
+done
+
 # Command Completion
 mkdir -p --mode=700 "$XDG_CACHE_HOME/zsh"
 autoload -Uz compinit
