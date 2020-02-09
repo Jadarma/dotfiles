@@ -88,3 +88,17 @@ super + alt + {Left,Up,Down,Right}
 # Resize gaps between nodes in tiled mode.
 super + bracket{left,right}
 	  bspwm_gaps {dec, inc}
+
+# Application Shortcuts -------------------------------------------------------
+
+# Dmenu Recent Apps
+super + d
+    dmenu_recency
+
+# Browser
+super + {_, shift + } F2
+    brave {_, --incognito}
+
+# File Explorer
+super + F3
+    pcmanfm
