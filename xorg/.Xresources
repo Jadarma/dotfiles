@@ -1,0 +1,50 @@
+Xcursor.theme: xcursor-breeze
+Xcursor.size:  0
+Xft.dpi:       96
+Xft.antialias: true
+Xft.hinting:   true
+Xft.rgba:      rgb
+Xft.autohint:  false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+! special
+*.foreground:         #b0bec5
+*.background:         #263238
+*.background-dark:    #222d32
+*.background-darkest: #1b2529
+*.background-select:  #314549
+*.accent:             #16a085
+*.cursorColor:        #b0bec5
+
+! black
+*.color0:       #c3cee3
+*.color8:       #546e7a
+
+! red
+*.color1:       #ff5370
+*.color9:       #ff5370
+
+! green
+*.color2:       #c3e88d
+*.color10:      #c3e88d
+
+! yellow
+*.color3:       #ffcb6b
+*.color11:      #ffcb6b
+
+! blue
+*.color4:       #82aaff
+*.color12:      #82aaff
+
+! magenta
+*.color5:       #c792ea
+*.color13:      #c792ea
+
+! cyan
+*.color6:       #89ddff
+*.color14:      #89ddff
+
+! white
+*.color7:       #546e7a
+*.color15:      #f8f8f0

@@ -1,0 +1,18 @@
+#!/bin/sh
+# -----------------------------------------------------------------------------
+# X Profile
+#
+# This file will be sourced when the graphical session is started (via a DM).
+# If you are using startx, you should source it via xinitrc.
+#
+# Used for starting up programs on launching the graphical environment.
+# -----------------------------------------------------------------------------
+
+sxhkd &                                # Hot Key Service
+dunst &                                # Notification Service
+pulseaudio --start                     # Audio Service
+nm-applet &                            # Networking Tray
+picom --daemon                         # Display Compositor
+unclutter &                            # Hides Inactive Cursor
+st &                                   # Emergency Terminal
+notify-send 'Welcome!'                 # Greeting
