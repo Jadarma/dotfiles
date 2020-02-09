@@ -19,7 +19,7 @@ feh \
   --no-fehbg \
   --bg-fill \
   --no-xinerama \
-  "$XDG_DATA_HOME/images/manjarowatch.png"
+  "$XDG_DATA_HOME/dotfiles/images/manjarowatch.png"
 
 # Workaround for Java GUIs to render properly.
 wmname LG3D
