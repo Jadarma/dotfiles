@@ -1,0 +1,23 @@
+#!/bin/sh
+# -----------------------------------------------------------------------------
+# Increases or decreases the selected nodes size in a given direction.
+# If [STEP] is not defined it will default to 10.
+#
+# Usage: node_resize (west|north|south|east) [STEP]
+# -----------------------------------------------------------------------------
+STEP=${2:-'10'}
+
+case $1 in
+west)
+  bspc node @west -r "-${STEP}" || bspc node @east -r "-${STEP}"
+  ;;
+east)
+  bspc node @west -r "+${STEP}" || bspc node @east -r "+${STEP}"
+  ;;
+north)
+  bspc node @south -r "-${STEP}" || bspc node @north -r "-${STEP}"
+  ;;
+south)
+  bspc node @south -r "+${STEP}" || bspc node @north -r "+${STEP}"
+  ;;
+esac
