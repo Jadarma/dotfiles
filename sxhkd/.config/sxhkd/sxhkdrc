@@ -102,3 +102,12 @@ super + {_, shift + } F2
 # File Explorer
 super + F3
     pcmanfm
+
+# -----------------------------------------------------------------------------
+# SCRIPT SHORTCUTS
+# -----------------------------------------------------------------------------
+
+# Power Menu - Shutdown, Sleep, Restart etc.
+super + 0
+    powermenu
+
