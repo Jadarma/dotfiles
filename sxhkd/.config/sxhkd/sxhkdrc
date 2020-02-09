@@ -1,4 +1,5 @@
 # shellcheck disable=SC1083
+# shellcheck disable=SC1073
 # -----------------------------------------------------------------------------
 # Simple X HotKey Daemon Resource Configuration
 #
@@ -111,3 +112,9 @@ super + F3
 super + 0
     powermenu
 
+# -----------------------------------------------------------------------------
+# Audio
+# -----------------------------------------------------------------------------
+
+{ XF86AudioLowerVolume, XF86AudioRaiseVolume }
+    pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
