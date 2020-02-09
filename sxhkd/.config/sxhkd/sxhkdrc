@@ -1,3 +1,4 @@
+# shellcheck disable=SC1083
 # -----------------------------------------------------------------------------
 # Simple X HotKey Daemon Resource Configuration
 #
@@ -12,3 +13,78 @@ super + Escape
 super + Return
     st &
 
+# -----------------------------------------------------------------------------
+# BSPWM Hotkeys
+# -----------------------------------------------------------------------------
+
+# Quit or Restart BSPWM.
+super + alt + {q,r}
+    bspc {quit,wm -r}
+
+# Navigation / Focus Cycling --------------------------------------------------
+
+# Focus the given desktop by name (assumes implicit digit naming)
+super + {1-9}
+    bspc desktop -f {1-9}
+
+# Focus the window in the given direction
+super + {Left,Up,Down,Right}
+    bspwm_focus {west,north,south,east}
+
+# Cycle focus between the nodes in the focused desktop.
+super + {_, shift + } Tab
+    bspc node -f {prev, next}.local
+
+# Cycle focus between the desktops in the focused monitor.
+super + {comma, period}
+    bspc desktop -f {prev, next}.local
+
+# Cycle focus between monitors.
+super + ctrl + {comma,period}
+    bspc monitor -f {prev, next}
+
+# Node Creation / Destruction -------------------------------------------------
+
+# Close focused window.
+super + shift + q
+    bspc node -c
+
+# Preselect
+super + ctrl + {Left,Up,Down,Right}
+    bspc node --presel-dir \~{west,north,south,east}
+
+# Node Movement / Switching ---------------------------------------------------
+
+# Switch focused node with the node next to it in the specified direction.
+super + shift + {Left,Down,Up,Right}
+    bspc node -s {west,south,north,east}.local
+
+# Send focused to given desktop
+super + ctrl + {1-9}
+    bspc node -d {1-9}
+
+# Send to and focus the given desktop
+super + shift + {1-9}
+    bspc node -d {1-9} --follow
+
+# Node Layout / Resizing ------------------------------------------------------
+
+# Swap between Tiled / Monocle layouts.
+super + m
+    bspc desktop -l next
+
+# Toggle between the focused node's states.
+super + {t,shift + t,s,f}
+	  bspc node --state \~{tiled,pseudo_tiled,floating,fullscreen}
+
+# Rotate, balance, or equalize the tree of the focused node or desktop.
+super + {_, shift + } {r,b,e}
+    bspc node @{parent,_}/ --{rotate 90,balance,equalize}
+
+# Resize the current node.
+super + alt + {Left,Up,Down,Right}
+    bspwm_resize {west,north,south,east} 20
+
+# Resize gaps between nodes in tiled mode.
+super + bracket{left,right}
+	  bspwm_gaps {dec, inc}
