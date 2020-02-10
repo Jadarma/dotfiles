@@ -1,0 +1,29 @@
+#!/bin/sh
+# -----------------------------------------------------------------------------
+# BSPWM Focus
+#
+# Focus the node in the given direction. If in monocle mode, will cycle through
+# previous / next, otherwise will use direction provided.
+#
+# Usage: node_focus_dir (west|north|south|east)
+# -----------------------------------------------------------------------------
+
+case $1 in
+west | north | south | east) ;;
+*) exit 1 ;; # Unexpected input.
+esac
+
+LAYOUT=$(bspc query -T -d | jq -r '.layout')
+DIR="$1"
+if [ "$LAYOUT" = "monocle" ]; then
+  case $1 in
+  west | north)
+    DIR="prev"
+    ;;
+  south | east)
+    DIR="next"
+    ;;
+  esac
+fi
+
+bspc node -f "$DIR.local"

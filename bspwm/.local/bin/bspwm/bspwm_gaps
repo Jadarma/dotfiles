@@ -1,0 +1,24 @@
+#!/bin/sh
+# -----------------------------------------------------------------------------
+# Increases or decreases the gap between windows.
+# If [STEP] is not defined it will default to 5.
+#
+# Usage: gaps_resize (inc|dec) [STEP]
+# -----------------------------------------------------------------------------
+GAP=$(bspc config window_gap)
+STEP=${2:-5}
+
+case $1 in
+inc)
+  NEWGAP=$((GAP + STEP))
+  ;;
+dec)
+  NEWGAP=$((GAP - STEP))
+  if [ "$NEWGAP" -lt "0" ]; then NEWGAP=0; fi
+  ;;
+esac
+
+# Tip: You can change the gap just in specific desktops by adding a filter, but
+# I chose to leave that option out because it can lead to ugly inconsistencies.
+# Example: `bspc config -d [DESKTOP_SEL] window_gap [NEWGAP]`
+bspc config window_gap $NEWGAP
