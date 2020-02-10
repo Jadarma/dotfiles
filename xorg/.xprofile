@@ -1,6 +1,6 @@
 #!/bin/sh
 # -----------------------------------------------------------------------------
-# X Profile
+# X PROFILE
 #
 # This file will be sourced when the graphical session is started (via a DM).
 # If you are using startx, you should source it via xinitrc.
