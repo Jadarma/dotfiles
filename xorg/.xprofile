@@ -15,4 +15,5 @@ nm-applet &                            # Networking Tray
 picom --daemon                         # Display Compositor
 unclutter &                            # Hides Inactive Cursor
 st &                                   # Emergency Terminal
+launch_polybar                         # Status Bar
 notify-send 'Welcome!'                 # Greeting
