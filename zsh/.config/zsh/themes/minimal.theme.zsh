@@ -17,5 +17,5 @@
 # -----------------------------------------------------------------------------
 
 # shellcheck disable=SC2034
-PROMPT='%B%F{black} %~ %F{green}%(!.#.$)%b%F{black} '
-RPROMPT='%(?.%F{green}√.%F{red}%?✗) %F{white}%* %F{black}'
+PROMPT='%B%F{yellow} %~ %F{green}%(!.#.$)%b%F{white} '
+RPROMPT='%(?.%F{green}√.%F{red}%?✗) %F{white}%* '
