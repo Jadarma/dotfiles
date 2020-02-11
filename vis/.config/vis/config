@@ -1,3 +1,13 @@
+# -----------------------------------------------------------------------------
+# CLI VISUALIZER
+#
+# Config for a cool sound visualizer to play in your terminal with. This file
+# has been scraped down to contain just settings I deemed important. For a more
+# complete example configuration, visit the official repo.
+#
+# @see https://github.com/dpayne/cli-visualizer/blob/master/examples/config
+# -----------------------------------------------------------------------------
+
 # Refresh rate of the visualizers. A really high refresh rate may cause screen tearing. Default is 20.
 visualizer.fps=60
 
