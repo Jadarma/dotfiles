@@ -18,8 +18,8 @@ Xft.lcdfilter: lcddefault
 *.cursorColor:        #b0bec5
 
 ! black
-*.color0:       #c3cee3
-*.color8:       #546e7a
+*.color0:       #263238
+*.color8:       #37474f
 
 ! red
 *.color1:       #ff5370
@@ -46,5 +46,5 @@ Xft.lcdfilter: lcddefault
 *.color14:      #89ddff
 
 ! white
-*.color7:       #546e7a
-*.color15:      #f8f8f0
+*.color7:       #cfd8dc
+*.color15:      #eceff1

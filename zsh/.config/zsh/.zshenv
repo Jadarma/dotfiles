@@ -17,6 +17,7 @@ path=(
     /usr/local/bin
     $HOME/.local/bin
     $HOME/.local/bin/bspwm
+    $HOME/.local/bin/polybar
     $HOME/.local/bin/scripts
 )
 export PATH
