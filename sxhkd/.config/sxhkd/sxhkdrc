@@ -12,7 +12,7 @@ super + Escape
 
 # Open a Terminal
 super + Return
-    st &
+    alacritty &
 
 # -----------------------------------------------------------------------------
 # BSPWM Hotkeys
