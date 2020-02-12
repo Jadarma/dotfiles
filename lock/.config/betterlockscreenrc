@@ -1,0 +1,51 @@
+# suppress inspection "SpellCheckingInspection" for whole file
+# -----------------------------------------------------------------------------
+# BETTER LOCK SCREEN
+#
+# Configuration file for betterlockscreen. Colors are in rrggbbaa format.
+# -----------------------------------------------------------------------------
+
+# Sets the default "resting" color for the interior circle.
+insidecolor=00000000
+
+# Sets the color of the ring 'highlight' strokes that appear upon keypress.
+keyhlcolor=16a085ff
+
+# Sets the color of the ring 'highlight' strokes that appear upon backspace.
+bshlcolor=f07178ff
+
+# Sets the color of the 'separtor', which is at both ends of the ring highlights.
+separatorcolor=c792eaff
+
+# Sets the interior circle color while the password is being verified.
+insidevercolor=00000000
+
+# Sets the interior circle color for during flash for an incorrect password.
+insidewrongcolor=d23c3dff
+
+# Sets the default ring color.
+ringcolor=eaeaeaff
+
+# Sets the ring color while the password is being verified.
+ringvercolor=ffcb6bff
+
+# Sets the color during the flash for an incorrect password.
+ringwrongcolor=f07178ff
+
+# Sets the color of the status text while verifying.
+verifcolor=eaeaeaff
+
+# Sets the color of the time in the clock.
+timecolor=eaeaeaff
+
+# Sets the color of the date in the clock.
+datecolor=607D8Bff
+
+# Sets the color of the login box background. (Requires updating)
+loginbox=263238ff
+
+# Sets the font to use to render all text.
+font="JetBrains Mono"
+
+# Sets the format of the text under the time.
+locktext='%A, %m %Y'
