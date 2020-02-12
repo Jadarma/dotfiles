@@ -4,10 +4,11 @@
 #
 # Show a dmenu prompt in the top left-hand corner for various power options.
 # -----------------------------------------------------------------------------
-case "$(echo -e "Shutdown\nRestart\nLogout\nSuspend" | dmenu -i \
+case "$(printf 'Lock\nShutdown\nRestart\nLogout\nSuspend' | dmenu -i \
     -l 5 \
     -w 300 \
     -y 26)" in
+  Lock) exec betterlockscreen -l blur ;;
   Shutdown) exec systemctl poweroff;;
   Restart) exec systemctl reboot;;
   Suspend) exec systemctl suspend;;
