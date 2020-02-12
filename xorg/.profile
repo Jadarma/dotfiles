@@ -11,7 +11,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 # Default Programs
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export FILE="pcmanfm"
 export EDITOR="vscodium"
 export BROWSER="brave"
