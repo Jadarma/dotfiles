@@ -48,4 +48,4 @@ loginbox=263238ff
 font="JetBrains Mono"
 
 # Sets the format of the text under the time.
-locktext='%A, %m %Y'
+locktext='%A, %F'
