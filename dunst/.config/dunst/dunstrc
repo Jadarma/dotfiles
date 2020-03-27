@@ -32,17 +32,17 @@ follow = mouse
 #   the screen. Y is measured from the top and bottom respectively.
 # The width can be negative. In this case the actual width is the screen width
 #   minus the width defined in within the geometry option.
-geometry = "300x5-30+20"
+geometry = "420x5-10+35"
 
 # Show how many messages are currently hidden (because of geometry).
 indicate_hidden = yes
 
 # Shrink window if it's smaller than the width. Will be ignored if width is 0.
-shrink = no
+shrink = yes
 
 # The transparency of the window. Range: [0; 100].
 # Requires a compositing window manager.
-transparency = 0
+transparency = 20
 
 # The height of the entire notification.
 # If the height is smaller than the font height and padding combined, it will
@@ -54,17 +54,17 @@ notification_height = 0
 separator_height = 2
 
 # Padding between text and separator.
-padding = 8
+padding = 12
 
 # Horizontal padding.
-horizontal_padding = 8
+horizontal_padding = 12
 
 # Defines width in pixels of frame around the notification window.
 # Set to 0 to disable.
-frame_width = 3
+frame_width = 2
 
 # Defines color of the frame around the notification window.
-frame_color = "#aaaaaa"
+frame_color = "#16a085"
 
 # Define a color for the separator.
 # Possible values are:
@@ -85,7 +85,7 @@ idle_threshold = 120
 
 # Text ------------------------------------------------------------------------
 
-font = Monospace 13
+font = Monospace 10
 
 # The spacing between lines.
 # If smaller than the font height, it will get raised to the font height.
@@ -126,7 +126,7 @@ markup = full
 #   %n  progress value if set without any extra characters
 #   %%  Literal %
 # Markup is allowed
-format = "<b>%s</b>\n%b"
+format = "<b>%s</b> %p\n%b"
 
 # Alignment of message text.
 # Possible values are `left`, `center` and `right`.
@@ -159,13 +159,13 @@ show_indicators = yes
 
 # Align the icons.
 # Possible values are `left`, `right`, and `off`.
-icon_position = off
+icon_position = left
 
 # Scale larger icons down to this size. Set to 0 to disable.
-max_icon_size = 32
+max_icon_size = 64
 
 # Paths to default icons.
-icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+# icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
 # History ---------------------------------------------------------------------
 
@@ -235,9 +235,9 @@ force_xinerama = false
 #                  open the context menu.
 # `close_current`: Close current notification.
 # `close_all`    : Close all notifications.
-mouse_left_click = close_current
-mouse_middle_click = do_action
-mouse_right_click = close_all
+mouse_left_click = do_action
+mouse_middle_click = close_all
+mouse_right_click = close_current
 
 [experimental] # --------------------------------------------------------------
 # Features that may or may not work correctly. Do not expect them to have a
@@ -256,42 +256,44 @@ per_monitor_dpi = false
 # `mod4` (windows-key). Xev might be helpful to find names for keys.
 
 # Close notification.
-close = ctrl+space
+;close = ctrl+space
 
 # Close all notifications.
-close_all = ctrl+shift+space
+;close_all = ctrl+shift+space
 
 # Redisplay last message(s).
 # On the US keyboard layout "grave" is normally above TAB and left of "1".
 # Make sure this key actually exists on your keyboard layout,
 # e.g. check output of `xmodmap -pke`
-history = ctrl+grave
+;history = ctrl+grave
 
 # Context menu.
-context = ctrl+shift+period
+;context = ctrl+shift+period
 
 # Urgency Appearance ----------------------------------------------------------
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
 
 [urgency_low]
-background = "#222222"
-foreground = "#888888"
-timeout = 10
+background = "#263238"
+foreground = "#b0bec5"
+frame_color = "#314549"
+timeout = 5
 # Icon for notifications with low urgency, uncomment to enable.
 # icon = /path/to/icon
 
 [urgency_normal]
-background = "#285577"
-foreground = "#ffffff"
+background = "#222d32"
+foreground = "#b0bec5"
+frame_color = "#314549"
 timeout = 10
 # Icon for notifications with normal urgency, uncomment to enable.
 # icon = /path/to/icon
 
 [urgency_critical]
-background = "#900000"
-foreground = "#ffffff"
-frame_color = "#ff0000"
+background = "#263238"
+foreground = "#eaeaea"
+frame_color = "#ff5370"
 timeout = 0
 # Icon for notifications with critical urgency, uncomment to enable.
 # icon = /path/to/icon
