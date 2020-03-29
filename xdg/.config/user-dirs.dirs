@@ -2,7 +2,8 @@
 # XDG User Directories
 #
 # Specify custom locations for variously purpoed user folders.
-# These variables are also useful during scripting.
+# These are also useful during scripting. For example, to get the downloads
+# directory: "$(xdg-user-dir DOWNLOADS)"
 #
 # @see https://wiki.archlinux.org/index.php/XDG_user_directories
 # -----------------------------------------------------------------------------
@@ -13,8 +14,10 @@ XDG_DOCUMENTS_DIR="$HOME/docs"
 XDG_DOWNLOAD_DIR="$HOME/dl"
 
 XDG_MUSIC_DIR="$HOME/media/music"
-XDG_PICTURES_DIR="$HOME/media/pics"
+XDG_PICTURES_DIR="$HOME/media/pictures"
 XDG_VIDEOS_DIR="$HOME/media/videos"
 
 XDG_PUBLICSHARE_DIR="$HOME/public"
 XDG_TEMPLATES_DIR="$HOME/docs/templates"
+
+XDG_SCREENSHOTS_DIR="$XDG_PICTURES_DIR/screenshots"
