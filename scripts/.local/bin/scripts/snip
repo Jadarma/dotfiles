@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 # -----------------------------------------------------------------------------
 # Snip
 #
@@ -21,16 +21,17 @@ while getopts "cs" OPTION; do
 done
 
 # Set the common command args.
-MAIM=maim\ -u\ --quality\ 10\ --format\ png
+OPTS=("-u" "--quality=10" "--format=png")
 
 # If using a selection, add some arguments.
-[ -n "$SELECTION" ] && MAIM=$MAIM\ -slq\ -c\ 0.19,0.27,0.28,0.25
+[[ -v SELECTION ]] && OPTS+=("-slq" "--color=0.19,0.27,0.28,0.25")
 
 # Take the screenshot and save it to desired location.
-if [ -n "$CLIPBOARD" ]; then
-  $MAIM && notify-send "Screenshot saved" "<i>Clipboard</i>" |
-    xclip -selection clipboard -t image/png
+if [[ -v CLIPBOARD ]]; then
+  maim $^OPTS | xclip -selection clipboard -t image/png
+  # shellcheck disable=SC2154
+  [ "${pipestatus[1]}" = 0 ] && notify-send "Screenshot saved" "</i>Clipboard<i>"
 else
   FILE="$(xdg-user-dir SCREENSHOTS)/screen-$(date +%s).png"
-  $MAIM "$FILE" && notify-send "Screenshot saved" "<i>$FILE</i>"
+  maim $^OPTS "$FILE" && notify-send "Screenshot saved" "<i>$FILE</i>"
 fi
