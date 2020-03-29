@@ -112,9 +112,9 @@ super + F3
 super + 0
     powermenu
 
-# Screenshot - Desktop
-Print
-    screencap
+# Screenshot
+{_, super} + {_, shift} + Print
+    snip {_,-s} {_,-c}
 
 # -----------------------------------------------------------------------------
 # Audio
