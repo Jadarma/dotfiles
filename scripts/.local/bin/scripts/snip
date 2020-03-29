@@ -1,0 +1,35 @@
+#!/bin/sh
+# -----------------------------------------------------------------------------
+# Snip
+#
+# Wrapper script that handles the generic usecase of taking screenshots.
+# By default, it captures the whole screen and saves it in the designated
+# screenshot directory.  Also displays a notification if successful.
+#
+# Available arguments:
+# -c : Copies the image to clipboard rather than saving it to disk.
+# -s : Allows the user to select a specific region.
+# -----------------------------------------------------------------------------
+
+# Parse arguments.
+while getopts "cs" OPTION; do
+  case $OPTION in
+  c) CLIPBOARD=1 ;;
+  s) SELECTION=1 ;;
+  *) exit 2 ;;
+  esac
+done
+
+# Set the common command args.
+MAIM=maim\ -u\ --quality\ 10\ --format\ png
+
+# If using a selection, add some arguments.
+[ -n "$SELECTION" ] && MAIM=$MAIM\ -slq\ -c\ 0.19,0.27,0.28,0.25
+
+# Take the screenshot and save it to desired location.
+if [ -n "$CLIPBOARD" ]; then
+  $MAIM && notify-send "Screenshot saved" "<i>Clipboard</i>" | xclip -selection clipboard -t image/png
+else
+  FILE="$(xdg-user-dir SCREENSHOTS)/screen-$(date +%s).png"
+  $MAIM "$FILE" && notify-send "Screenshot saved" "<i>$FILE</i>"
+fi
