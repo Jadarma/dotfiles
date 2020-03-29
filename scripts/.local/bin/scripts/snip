@@ -16,7 +16,7 @@ while getopts "cs" OPTION; do
   case $OPTION in
   c) CLIPBOARD=1 ;;
   s) SELECTION=1 ;;
-  *) exit 2 ;;
+  *) exit 1 ;;
   esac
 done
 
@@ -28,7 +28,8 @@ MAIM=maim\ -u\ --quality\ 10\ --format\ png
 
 # Take the screenshot and save it to desired location.
 if [ -n "$CLIPBOARD" ]; then
-  $MAIM && notify-send "Screenshot saved" "<i>Clipboard</i>" | xclip -selection clipboard -t image/png
+  $MAIM && notify-send "Screenshot saved" "<i>Clipboard</i>" |
+    xclip -selection clipboard -t image/png
 else
   FILE="$(xdg-user-dir SCREENSHOTS)/screen-$(date +%s).png"
   $MAIM "$FILE" && notify-send "Screenshot saved" "<i>$FILE</i>"
