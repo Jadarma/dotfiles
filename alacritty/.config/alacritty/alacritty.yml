@@ -22,11 +22,6 @@ scrolling:
   history: 10000
   # How many lines to jump per scroll.
   multiplier: 3
-  # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
-
-# This setting defines the width of a tab in cells.
-tabspaces: 4
 
 # Font configuration
 font:

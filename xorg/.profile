@@ -2,8 +2,10 @@
 # PROFILE
 #
 # Runs on login. This is where environmental variables are set.
-# Note that the $PATH variable is set in the ZSH config in `$ZDOTDIR/.zshenv`.
 # -----------------------------------------------------------------------------
+
+# Path with all the custom scripts from `$HOME/.local/bin/`
+export PATH="$PATH:$(du -a "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:$//')"
 
 # XDG User Directories
 export XDG_CONFIG_HOME="$HOME/.config"
