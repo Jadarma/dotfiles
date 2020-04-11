@@ -8,6 +8,10 @@
 # Used for starting up programs on launching the graphical environment.
 # -----------------------------------------------------------------------------
 
+# Enforce a specific monitor layout if configured.
+SCREENS="$XDG_CONFIG_HOME/dotfiles/$(hostname)/screen_layout.sh"
+$SCREENS > /dev/null 2>&1
+
 sxhkd &                                # Hot Key Service
 dunst &                                # Notification Service
 pulseaudio --start                     # Audio Service
