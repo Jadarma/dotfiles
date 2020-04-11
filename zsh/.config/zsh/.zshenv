@@ -9,15 +9,3 @@
 # Do not source ZSH prompts, plugins and other configuration here! Those go in
 # the "$ZDOTDIR/.zshrc", that is sourced only by interactive shells.
 # -----------------------------------------------------------------------------
-
-typeset -U PATH path
-path=(
-    /bin
-    /usr/bin
-    /usr/local/bin
-    $HOME/.local/bin
-    $HOME/.local/bin/bspwm
-    $HOME/.local/bin/polybar
-    $HOME/.local/bin/scripts
-)
-export PATH
