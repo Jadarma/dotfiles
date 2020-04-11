@@ -10,8 +10,5 @@ killall -q polybar
 while pgrep -u "$(id -u)" -x polybar > /dev/null; do sleep 1; done
 
 POLYBAR_OVERRIDE="$XDG_CONFIG_HOME/dotfiles/$(hostname)/polybar.sh"
-if [ -f "$POLYBAR_OVERRIDE" ]; then
-  $POLYBAR_OVERRIDE
-else
-  polybar --reload simple &
-fi
+$POLYBAR_OVERRIDE > /dev/null 2>&1 && exit
+polybar --reload simple &

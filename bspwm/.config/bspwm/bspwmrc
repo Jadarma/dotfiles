@@ -39,14 +39,12 @@ bspc rule -r "*"
 
 # Apply any per-host configurations, if applicable.
 BSPWM_OVERRIDE="$XDG_CONFIG_HOME/dotfiles/$(hostname)/bspwm.sh"
-if [ -f "$BSPWM_OVERRIDE" ]; then
-  $BSPWM_OVERRIDE
-else
-  # Otherwise, apply these sane defaults.
-  bspc monitor primary -d 1 2 3 4 5 6 7 8 9
-  feh \
-    --no-fehbg \
-    --bg-fill \
-    --no-xinerama \
-    "$XDG_DATA_HOME/dotfiles/images/manjarowatch.png"
-fi
+$BSPWM_OVERRIDE > /dev/null 2>&1 && exit
+
+# Otherwise, apply these sane defaults.
+bspc monitor primary -d 1 2 3 4 5 6 7 8 9
+feh \
+  --no-fehbg \
+  --bg-fill \
+  --no-xinerama \
+  "$XDG_DATA_HOME/dotfiles/images/manjarowatch.png"
