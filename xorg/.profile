@@ -20,3 +20,4 @@ export BROWSER="brave"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/.gtkrc-2.0"
 export QT_QPA_PLATFORMTHEME="qt5ct"
+export LESSHISTFILE=-

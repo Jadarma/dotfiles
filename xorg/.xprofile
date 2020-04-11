@@ -8,6 +8,7 @@
 # Used for starting up programs on launching the graphical environment.
 # -----------------------------------------------------------------------------
 
+host_override -s screen_layout.sh      # Optional xrandr setup
 sxhkd &                                # Hot Key Service
 dunst &                                # Notification Service
 pulseaudio --start                     # Audio Service

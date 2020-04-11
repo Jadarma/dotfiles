@@ -1,14 +1,12 @@
 #!/bin/sh
+# -----------------------------------------------------------------------------
+# Launch Polybar
+#
+# (Re)starts polybar. If there is a hostname override in place, runs that.
+# Otherwise launches default config.
+# -----------------------------------------------------------------------------
 
-# Kill al previous instances
 killall -q polybar
 while pgrep -u "$(id -u)" -x polybar > /dev/null; do sleep 1; done
 
-# TODO: Do not hardcode monitor identifiers.
-export MONITOR_LEFT='DP-1'
-export MONITOR_MAIN='DP-3'
-export MONITOR_RIGHT='DP-5'
-
-polybar -c "${XDG_CONFIG_HOME}/polybar/bars/triple-setup.ini" --reload left &
-polybar -c "${XDG_CONFIG_HOME}/polybar/bars/triple-setup.ini" --reload main &
-polybar -c "${XDG_CONFIG_HOME}/polybar/bars/triple-setup.ini" --reload right &
+host_override -s polybar.sh || polybar --reload simple &

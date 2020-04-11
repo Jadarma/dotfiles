@@ -59,21 +59,15 @@ tray-position = none
 line-size = 2
 wm-restack = bspwm
 
-[bar/left]
+[bar/simple]
 inherit = bar/common
-monitor = ${env:MONITOR_LEFT}
+monitor = ${env:MONITOR:}
 modules-left = bspwm
 modules-right = pulseaudio date
 
 [bar/main]
 inherit = bar/common
-monitor = ${env:MONITOR_MAIN:HDMI1}
+monitor = ${env:MONITOR:}
 modules-left = bspwm xwindow
 modules-right = memory cpu temperature pulseaudio date
 tray-position = right
-
-[bar/right]
-inherit = bar/common
-monitor = ${env:MONITOR_RIGHT}
-modules-left = bspwm
-modules-right = pulseaudio date

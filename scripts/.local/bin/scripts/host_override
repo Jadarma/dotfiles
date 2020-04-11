@@ -1,0 +1,24 @@
+#!/bin/zsh
+# -----------------------------------------------------------------------------
+# Host Override
+#
+# Runs a script with the given name from the dotfile host override folder.
+# -w : Also notify the user that the override does not exist.
+# -s : Mute all output, including errors.
+# -----------------------------------------------------------------------------
+while getopts "ws" OPTION; do
+  case $OPTION in
+  w) WARN=1 ;;
+  s) SILENT=1 ;;
+  *) exit 2 ;;
+  esac
+done
+
+for last; do true; done
+SCRIPT="$XDG_CONFIG_HOME/dotfiles/$(hostname)/$last"
+
+[[ ! -f $SCRIPT && -v $WARN ]] && notify-send "Host override missing!" "<i>$SCRIPT</i>"
+[[ -f $SCRIPT && ! -x $SCRIPT && -v $WARN ]] && notify-send "Host override not executable" "<i>$SCRIPT</i>"
+[[ -v $SILENT ]] && exec &>/dev/null
+
+$SCRIPT
