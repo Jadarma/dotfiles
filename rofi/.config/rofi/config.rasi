@@ -1,0 +1,41 @@
+// ----------------------------------------------------------------------------
+// Rasi Default Config
+//
+// By default, rasi will look like a themed dmenu, in a single horizontal line
+// the same size of the statusbar.
+// ----------------------------------------------------------------------------
+configuration {
+    font: "Jetbrains Mono 10";
+}
+
+@theme "material-oceanic"
+
+#window {
+    anchor:     north;
+    location:   north;
+    width:      100%;
+    height:     24px;
+    orientation: horizontal;
+    children:   [ prompt, entry, listview ];
+}
+
+#listview {
+    layout:     horizontal;
+    spacing:    5px;
+    lines:      100;
+}
+
+#prompt {
+    padding: 4px;
+}
+
+#entry {
+    padding:    4px;
+    expand:     false;
+    width:      10em;
+}
+
+#element {
+    height: 24px;
+    padding: 4px;
+}
