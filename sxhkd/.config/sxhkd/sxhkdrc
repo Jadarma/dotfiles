@@ -112,6 +112,10 @@ super + F3
 super + 0
     powermenu
 
+# Emoji Browser
+super + grave
+    dmoji
+
 # Screenshot
 {_, super} + {_, shift} + Print
     snip {_,-s} {_,-c}
