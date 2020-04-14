@@ -1,0 +1,40 @@
+// ----------------------------------------------------------------------------
+// Rasi Long dmenu Config
+//
+// A vertical dmenu configuration.
+// ----------------------------------------------------------------------------
+@theme "material-oceanic"
+
+#window {
+    width: 100%;
+    anchor:     north;
+    location:   north;
+    orientation: vertical;
+    children:   [ searchbox, listview ];
+}
+
+#listview {
+    fixed-height: false;
+}
+
+#searchbox {
+    width: 100%;
+    height: 24px;
+    expand: false;
+    orientation: horizontal;
+    children: [ prompt, entry ];
+}
+
+#prompt {
+    padding: 4px;
+}
+
+#entry {
+    padding: 4px;
+    expand: true;
+}
+
+#element {
+    height: 20px;
+    padding: 4px;
+}
