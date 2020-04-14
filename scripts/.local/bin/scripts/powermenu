@@ -7,7 +7,7 @@
 
 OPTION=$(\
   printf '🔒 Lock\n💤 Suspend\n🔌 Shutdown\n♻ ️Restart\n🚪 Logout' |\
-  rofi -dmenu -i -theme hdmenu -p "Power Options:"\
+  rofi -dmenu -i -theme vmenu -p "Power Options:"\
 )
 
 case "$OPTION" in
