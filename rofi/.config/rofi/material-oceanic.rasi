@@ -1,0 +1,15 @@
+* {
+    font: "Jetbrains Mono 10";
+    background-color: #222d32;
+    text-color: #b0bec5;
+}
+
+#element {
+    highlight: bold underline;
+}
+
+#element selected {
+    background-color: #16a085;
+    text-color: #1b2529;
+    highlight: bold;
+}
