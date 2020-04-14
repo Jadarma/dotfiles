@@ -4,13 +4,16 @@
 #
 # Show a dmenu prompt in the top left-hand corner for various power options.
 # -----------------------------------------------------------------------------
-case "$(printf 'Lock\nShutdown\nRestart\nLogout\nSuspend' | dmenu -i \
-    -l 5 \
-    -w 300 \
-    -y 26)" in
-  Lock) exec betterlockscreen -l blur ;;
-  Shutdown) exec systemctl poweroff;;
-  Restart) exec systemctl reboot;;
-  Suspend) exec systemctl suspend;;
-  Logout) exec bspc quit;;
+
+OPTION=$(\
+  printf '🔒 Lock\n💤 Suspend\n🔌 Shutdown\n♻ ️Restart\n🚪 Logout' |\
+  rofi -dmenu -i -theme hdmenu -p "Power Options:"\
+)
+
+case "$OPTION" in
+  *Lock) exec betterlockscreen -l blur ;;
+  *Shutdown) exec systemctl poweroff;;
+  *Restart) exec systemctl reboot;;
+  *Suspend) exec systemctl suspend;;
+  *Logout) exec bspc quit;;
 esac
