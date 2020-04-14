@@ -4,10 +4,6 @@
 // By default, rasi will look like a themed dmenu, in a single horizontal line
 // the same size of the statusbar.
 // ----------------------------------------------------------------------------
-configuration {
-    font: "Jetbrains Mono 10";
-}
-
 @theme "material-oceanic"
 
 #window {
