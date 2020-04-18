@@ -1,1 +1,6 @@
-- [Getting Started](README.md)
+- Getting Started
+    - [Getting Started](README.md)
+- Installation
+    - [Arch Linux Fresh Install](installation/arch.md)
+    - [Arch Linux Post Install](installation/post_install.md)
+    - [Dotfiles Setup](installation/setup.md)

@@ -103,7 +103,7 @@ The process is simple:
 - Build the package
 - Remove build files.
 
-```shell script
+```zsh
 sudo pacman -S git
 cd /tmp
 git clone https://aur.archlinux.org/yay-git.git
