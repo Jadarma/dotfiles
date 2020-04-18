@@ -1,0 +1,2 @@
+. "$HOME/.xprofile"
+exec bspwm
