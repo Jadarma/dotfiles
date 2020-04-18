@@ -10,6 +10,7 @@
 
 host_override -s screen_layout.sh      # Optional xRandr Setup
 xrdb "$HOME/.Xresources"               # Load Color Resources
+xsetroot -cursor_name left_ptr         # Get rid of the default "X" cursor.
 sxhkd &                                # Hot Key Service
 dunst &                                # Notification Service
 pulseaudio --start                     # Audio Service
