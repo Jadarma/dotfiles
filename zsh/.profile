@@ -17,6 +17,7 @@ export TERMINAL="alacritty"
 export FILE="pcmanfm"
 export EDITOR="nvim"
 export BROWSER="brave"
+export READER="zathura"
 
 # Home Directory Cleanup
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
