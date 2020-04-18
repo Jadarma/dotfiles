@@ -1,0 +1,42 @@
+# -----------------------------------------------------------------------------
+# Jadarma's Dotfiles - Package List
+#
+# All the packages that need to be installed for my config to work are listed
+# here. Some come from the standard repo, others from the AUR (Marked with an
+# [A] in the comments. You should be able to install everything using `yay`.
+# -----------------------------------------------------------------------------
+adapta-maia-theme           # GTK Theme
+papirus-maia-icon-theme-git # [A] Icon Theme
+alacritty                   # Terminal emulator.
+arandr                      # GTK frontend for xrandr.
+betterlockscreen            # Lock screen script.
+brave-bin                   # Web browser.
+bspwm                       # Tiling Window Manager
+cli-visualizer              # Music visualisation in the terminal.
+dunst                       # Notification daemon.
+feh                         # Image viewer, used just for setting backgrounds.
+frece                       # CLI tool for frequency and recency databases.
+maim                        # Screenshot tool.
+neofetch                    # Obligatory /r/unixporn requirement.
+neovim                      # Saner vim.
+network-manager-applet      # System tray application for network connectivity.
+noto-fonts                  # Most fonts you'll ever need.
+noto-fonts-emoji            # Font for emoji support.
+pavucontrol                 # GTK frontend for pulseaudio.
+pcmanfm                     # GTK file manager.
+picom                       # Display compositor.
+polybar                     # System bar.
+pulseaudio                  # Sound system.
+rofi-dmenu                  # [A] Dmenu replacement
+stow                        # Symlink manager for organising dotfiles.
+sxhkd                       # Hotkey manager.
+ttf-jetbrains-mono          # Perfect monospaced font.
+unclutter                   # Hides mouse cursor on inactivity.
+wmname                      # Workaround tool for JavaFX.
+xcursor-breeze              # GTK cursor theme.
+xdg-user-dirs               # Tool to define custom directories for stuff.
+xorg-server                 # X Display Server, enables graphical mode.
+xorg-xinit                  # X bootstrapping script.
+xorg-xsetroot               # X background and cursor utility.
+zathura                     # PDF viewer.
+zsh-syntax-highlighting     # Syntax highlighting for zsh.
