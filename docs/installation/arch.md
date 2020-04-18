@@ -21,12 +21,14 @@ Otherwise, prepare a USB stick and follow the
 The following steps assume that you have already booted into the Arch install
 ISO on an EFI-capable machine.
 
+---
 - **Update the system clock**
 
 ```zsh
 timedatectl set-ntp true
 ```
 
+---
 - **Partition disk**
 
 Your experience may vary.
@@ -42,6 +44,7 @@ Using `fdisk`, create the following partitions:
 /dev/vda3 Linux x86-64 root    <Remaining>
 ```
 
+---
 - **Format and mount partitions**
 
 ```zsh
@@ -54,6 +57,7 @@ mkdir /mnt/boot
 mount /dev/vda1 /mnt/boot
 ```
 
+---
 - **Pacstrap**
 
 Install base packages, text editors, services, etc.
@@ -68,6 +72,7 @@ pacstrap /mnt \
   intel-ucode
 ```
 
+---
 - **Generate FSTAB**
 
 ```zsh
@@ -77,6 +82,7 @@ You may want to open the file and take note of the UUID of your root partition,
 in this case `/dev/vda3`.
 We will need it later.
 
+---
 - **Change root**
 
 We can now begin working directly from our installed Arch.
@@ -84,6 +90,7 @@ We can now begin working directly from our installed Arch.
 arch-chroot /mnt
 ```
 
+---
 - **Setup timezones and locale**
 
 Replace the variables with your own variants. I recommend using `en_DK` instead
@@ -96,6 +103,7 @@ locale-gen
 echo "LANG=en_DK.UTF-8" > /etc/locale.conf
 ```
 
+---
 - **Network configuration**
 
 Configure hosts.
@@ -114,6 +122,7 @@ Give it the following contents:
 127.0.1.1      $HOSTNAME.localdomain $HOSTNAME
 ```
 
+---
 - **Set a root password**
 
 Make it a good one.
@@ -122,6 +131,7 @@ Make it a good one.
 passwd
 ```
 
+---
 - **Install bootloader**
 
 Because we are using EFI, and Arch using `systemd`, we will be using
@@ -155,6 +165,7 @@ options  root=UUID=$UUID rw
 
 !> If you didn't install `intel-ucode`, skip that line.
  
+---
 - **Exit and reboot**
 
 Fingers crossed!
