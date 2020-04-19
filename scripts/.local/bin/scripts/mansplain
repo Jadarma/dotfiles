@@ -1,0 +1,24 @@
+#!/bin/zsh
+# -----------------------------------------------------------------------------
+# MANSPLAIN
+#
+# PDF enabled manual viewer.
+#
+# Shows a rofi prompt if called with no arguments (filtered by only the section
+# 1 entries). Otherwise, if the entry is specified, attempts to open that page.
+# Searches are remembered, and the prompt will order them by search frequency.
+#
+# Inspired by Luke Smith: https://youtu.be/8E8sUNHdzG8
+# -----------------------------------------------------------------------------
+
+# Configure recency cache.
+DB="$XDG_CACHE_HOME/dotfiles/mansplain.db"
+[ -f "$DB" ] || frece init "$DB" <(man -s 1 -k . | awk '{print $1}')
+
+# Get the manual entry.
+MANUAL=${1:=$(frece print "$DB" | rofi -dmenu -theme vmenu -columns 5)}
+[ -n "$MANUAL" ] || exit
+
+# Update counter and display output
+frece increment "$DB" "$MANUAL"
+man -Tpdf "$MANUAL" | zathura - &
