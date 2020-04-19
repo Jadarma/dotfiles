@@ -4,8 +4,8 @@
 #
 # PDF enabled manual viewer.
 #
-# Shows a rofi prompt if called with no arguments (filtered by only the section
-# 1 entries). Otherwise, if the entry is specified, attempts to open that page.
+# Shows a rofi prompt if called with no arguments (shows just user commands and
+# configuration file entries.). Otherwise attempts to open the specified page.
 # Searches are remembered, and the prompt will order them by search frequency.
 #
 # Inspired by Luke Smith: https://youtu.be/8E8sUNHdzG8
@@ -13,7 +13,7 @@
 
 # Configure recency cache.
 DB="$XDG_CACHE_HOME/dotfiles/mansplain.db"
-[ -f "$DB" ] || frece init "$DB" <(man -s 1 -k . | awk '{print $1}')
+[ -f "$DB" ] || frece init "$DB" <(man -s 1,5 -k . | awk '{print $1}')
 
 # Get the manual entry.
 MAN=${1:=$(frece print "$DB" | rofi -dmenu -theme vmenu -columns 5 -p "Help:")}
