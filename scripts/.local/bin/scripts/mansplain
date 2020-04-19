@@ -16,9 +16,9 @@ DB="$XDG_CACHE_HOME/dotfiles/mansplain.db"
 [ -f "$DB" ] || frece init "$DB" <(man -s 1 -k . | awk '{print $1}')
 
 # Get the manual entry.
-MANUAL=${1:=$(frece print "$DB" | rofi -dmenu -theme vmenu -columns 5)}
-[ -n "$MANUAL" ] || exit
+MAN=${1:=$(frece print "$DB" | rofi -dmenu -theme vmenu -columns 5 -p "Help:")}
+[ -n "$MAN" ] || exit
 
 # Update counter and display output
-frece increment "$DB" "$MANUAL"
-man -Tpdf "$MANUAL" | zathura - &
+frece increment "$DB" "$MAN"
+man -Tpdf "$MAN" | zathura - &
