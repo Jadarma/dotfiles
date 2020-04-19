@@ -6,7 +6,7 @@
 # -----------------------------------------------------------------------------
 
 # Behaviour -------------------------------------------------------------------
-set adjust-open "best-fit"
+set adjust-open "width"
 set recolor "true"
 set selection-clipboard "clipboard"
 set selection-notification "false"
@@ -37,7 +37,7 @@ set notification-fg "#b0bec5"
 set notification-warning-bg "#1b2529"
 set notification-warning-fg "#ffcb6b"
 set page-padding 8
-set recolor-darkcolor "#b0bec5"
+set recolor-darkcolor "#eaeaea"
 set recolor-keephue "false"
 set recolor-lightcolor "#263238"
 set recolor-reverse-video "true"
