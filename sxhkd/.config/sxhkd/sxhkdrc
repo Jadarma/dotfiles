@@ -116,6 +116,10 @@ super + 0
 super + grave
     dmoji
 
+# Help - PDF Man Viewer
+super + F1
+    mansplain
+
 # Screenshot
 {_, super} + {_, shift} + Print
     snip {_,-s} {_,-c}
