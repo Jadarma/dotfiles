@@ -1,24 +1,25 @@
 #!/bin/zsh
 # -----------------------------------------------------------------------------
-# MANSPLAIN
+# Mansplain
 #
 # PDF enabled manual viewer.
 #
-# Shows a rofi prompt if called with no arguments (shows just user commands and
-# configuration file entries.). Otherwise attempts to open the specified page.
-# Searches are remembered, and the prompt will order them by search frequency.
+# Shows a rofi prompt for the manual entries of user commands and configuration
+# files. Searches are remembered, and the prompt will order them by frequency.
 #
 # Inspired by Luke Smith: https://youtu.be/8E8sUNHdzG8
 # -----------------------------------------------------------------------------
 
 # Configure recency cache.
 DB="$XDG_CACHE_HOME/dotfiles/mansplain.db"
-[ -f "$DB" ] || frece init "$DB" <(man -s 1,5 -k . | awk '{print $1}')
+[ -f "$DB" ] || frece init "$DB" <(man -s 1,5 -k .)
 
 # Get the manual entry.
-MAN=${1:=$(frece print "$DB" | rofi -dmenu -theme vmenu -columns 5 -p "Help:")}
-[ -n "$MAN" ] || exit
+CHOICE=$(frece print "$DB" | rofi -dmenu -theme vmenu -columns 3 -i -p "Help:")
+[ -n "$CHOICE" ] || exit
 
-# Update counter and display output
-frece increment "$DB" "$MAN"
-man -Tpdf "$MAN" | zathura - &
+# Parse selection, update counter and display output.
+SECTION=$(echo "$CHOICE" | awk -F'[)(]' '{print $2}')
+ENTRY=$(echo "$CHOICE" | awk '{print $1}')
+frece increment "$DB" "$CHOICE"
+man -Tpdf -s "$SECTION" "$ENTRY" | zathura - &
