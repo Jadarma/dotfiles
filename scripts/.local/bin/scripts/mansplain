@@ -2,24 +2,16 @@
 # -----------------------------------------------------------------------------
 # Mansplain
 #
-# PDF enabled manual viewer.
-#
 # Shows a rofi prompt for the manual entries of user commands and configuration
-# files. Searches are remembered, and the prompt will order them by frequency.
-#
-# Inspired by Luke Smith: https://youtu.be/8E8sUNHdzG8
+# files.
 # -----------------------------------------------------------------------------
 
-# Configure recency cache.
-DB="$XDG_CACHE_HOME/dotfiles/mansplain.db"
-[ -f "$DB" ] || frece init "$DB" <(man -s 1,5 -k .)
-
 # Get the manual entry.
-CHOICE=$(frece print "$DB" | rofi -dmenu -theme vmenu -columns 3 -i -p "Help:")
+CHOICE=$(man -s 1,5 -k . | rofi -dmenu -theme vmenu -columns 3 -i -p "Help:")
 [ -n "$CHOICE" ] || exit
 
 # Parse selection, update counter and display output.
 SECTION=$(echo "$CHOICE" | awk -F'[)(]' '{print $2}')
 ENTRY=$(echo "$CHOICE" | awk '{print $1}')
-frece increment "$DB" "$CHOICE"
-man -Tpdf -s "$SECTION" "$ENTRY" | zathura - &
+
+"$TERMINAL" -e man "$SECTION" "$ENTRY"
