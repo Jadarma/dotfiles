@@ -7,14 +7,19 @@
 # -----------------------------------------------------------------------------
 while read -r FILE; do
   case "$1" in
-    'C-c') # Copy image to clipboard
-      xclip -selection clipboard -target image/png "$FILE" &&
+  'C-c') # Copy image to clipboard
+    xclip -selection clipboard -target image/png "$FILE" &&
       notify-send -u low "📋 Copied to Clipboard" ;;
-    'greater') # Permanently rotate image clockwise.
-      mogrify -rotate 90 "$FILE" ;;
-    'less') # Permanently rotate image anti-clockwise.
-      mogrify -rotate 270 "$FILE" ;;
-    *) # Undefined command.
-      notify-send "❌ Undefined Command" "SXIV has no action bound to '$1'" ;;
+  'greater') # Permanently rotate image clockwise.
+    mogrify -rotate 90 "$FILE" ;;
+  'less') # Permanently rotate image anti-clockwise.
+    mogrify -rotate 270 "$FILE" ;;
+  'Delete') # Prompt for confirmation and delete image.
+    confirm "Delete $FILE?" &&
+      rm "$FILE" && notify-send -u low "♻️ Image deleted." ;;
+  'S-Delete') # Delete image without prompt.
+    rm "$FILE" && notify-send -u low "♻️ Image deleted." ;;
+  *) # Undefined command.
+    notify-send "❌ Undefined Command" "SXIV has no action bound to '$1'" ;;
   esac
 done
