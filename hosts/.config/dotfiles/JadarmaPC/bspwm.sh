@@ -7,8 +7,4 @@ bspc monitor DP-1 -d 4 5 6
 bspc monitor DP-3 -d 1 2 3
 bspc monitor DP-5 -d 7 8 9
 
-feh \
-  --no-fehbg \
-  --bg-fill \
-  --no-xinerama \
-  "$XDG_DATA_HOME/dotfiles/images/manjarowatch_triple.png"
+xwallpaper --no-randr --zoom "$XDG_DATA_HOME/dotfiles/images/manjarowatch_triple.png"

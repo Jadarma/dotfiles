@@ -14,7 +14,6 @@ brave-bin                   # Web browser.
 bspwm                       # Tiling Window Manager
 cli-visualizer              # Music visualisation in the terminal.
 dunst                       # Notification daemon.
-feh                         # Image viewer, used just for setting backgrounds.
 frece                       # CLI tool for frequency and recency databases.
 maim                        # Screenshot tool.
 neofetch                    # Obligatory /r/unixporn requirement.
@@ -38,5 +37,6 @@ xdg-user-dirs               # Tool to define custom directories for stuff.
 xorg-server                 # X Display Server, enables graphical mode.
 xorg-xinit                  # X bootstrapping script.
 xorg-xsetroot               # X background and cursor utility.
+xwallpaper                  # X wallpaper setter.
 zathura                     # PDF viewer.
 zsh-syntax-highlighting     # Syntax highlighting for zsh.
