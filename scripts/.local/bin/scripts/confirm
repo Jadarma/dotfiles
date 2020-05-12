@@ -12,6 +12,6 @@ NO="👎 <u><b>N</b></u>o "
 
 RES=$(
   echo "$NO|$YES" | rofi -dmenu -sep '|' -p "$PROMPT" -i -auto-select \
-    -only-match -no-cycle -markup-rows
+    -no-custom -no-cycle -markup-rows
 )
 [ "$RES" = "$YES" ] || exit 1
