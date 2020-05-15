@@ -39,6 +39,7 @@ unfunction xrdbq
 # Window rules.
 bspc rule -r "*"
 bspc rule -a Zathura state=tiled
+bspc config external_rules_command "$(command -v bspwm_external_rules)"
 
 # Start the status bar.
 launch_polybar

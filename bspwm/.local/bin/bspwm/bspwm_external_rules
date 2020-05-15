@@ -1,0 +1,20 @@
+#!/bin/sh
+# -----------------------------------------------------------------------------
+# BSPWM External Rules
+#
+# This script applies more complicated rules for BSPWM.
+# Rules shouldn't be declared here if they can be done with the default syntax.
+# -----------------------------------------------------------------------------
+
+WID=$1   # Window ID
+CLASS=$2 # Window Class Name
+
+# Make IntelliJ Idea splash screen float and center.
+if [ "$CLASS" = "jetbrains-idea" ]; then
+  TITLE=$(
+    xprop -id "$WID" |
+      grep -Po 'WM_NAME\(STRING\) = "(\w+)"' |
+      sed -E 's/.*"(\w+)"$/\1/'
+  )
+  [ "$TITLE" = "win0" ] && echo "state=floating"
+fi
