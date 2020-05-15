@@ -1,0 +1,17 @@
+#!/bin/sh
+# -----------------------------------------------------------------------------
+# SXIV Image Info
+#
+# This script is called by sxiv whenever an image gets loaded, and its output
+# is displayed in the status bar.
+# It is supplied with the following arguments:
+# - $1: The path to the image file.
+# - $2: Image width.
+# - $3: Image size.
+# -----------------------------------------------------------------------------
+
+FILENAME="$1"
+FILESIZE=$(du -Hh "$FILENAME" | cut -f 1)
+GEOMETRY="$2x$3px"
+
+echo "$FILENAME ($GEOMETRY, $FILESIZE)"

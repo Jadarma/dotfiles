@@ -13,7 +13,7 @@ set selection-notification "false"
 set first-page-column 1:1
 
 # Bindings --------------------------------------------------------------------
-map v toggle_statusbar
+map b toggle_statusbar
 
 # Theme -----------------------------------------------------------------------
 set completion-bg "#263238"

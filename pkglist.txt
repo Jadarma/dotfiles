@@ -28,9 +28,11 @@ polybar                     # System bar.
 pulseaudio                  # Sound system.
 rofi-dmenu                  # [A] Dmenu replacement
 stow                        # Symlink manager for organising dotfiles.
+sxiv                        # Image viewer.
 sxhkd                       # Hotkey manager.
 ttf-jetbrains-mono          # Perfect monospaced font.
 unclutter                   # Hides mouse cursor on inactivity.
+viewnior                    # GTK image viewer.
 wmname                      # Workaround tool for JavaFX.
 xcursor-breeze              # GTK cursor theme.
 xdg-user-dirs               # Tool to define custom directories for stuff.
