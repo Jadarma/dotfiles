@@ -50,9 +50,17 @@ super + ctrl + {comma,period}
 super + shift + q
     bspc node -c
 
-# Preselect
+# Preselect node in direction.
 super + ctrl + {Left,Up,Down,Right}
     bspc node --presel-dir \~{west,north,south,east}
+
+# Insert blank space (receptacle).
+super + o
+    bspc node -i
+
+# Remove all receptacles on current desktop.
+super + shift + o
+    for WIN in `bspc query -N -n '.leaf.!window'`; do bspc node $WIN -k; done;
 
 # Node Movement / Switching ---------------------------------------------------
 
