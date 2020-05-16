@@ -13,7 +13,7 @@ CLASS=$2 # Window Class Name
 if [ "$CLASS" = "jetbrains-idea" ]; then
   TITLE=$(
     xprop -id "$WID" |
-      grep -Po 'WM_NAME\(STRING\) = "(\w+)"' |
+      grep 'WM_NAME(STRING)' |
       sed -E 's/.*"(\w+)"$/\1/'
   )
   [ "$TITLE" = "win0" ] && echo "state=floating"
