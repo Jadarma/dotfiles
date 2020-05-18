@@ -1,0 +1,43 @@
+#!/bin/sh
+# ---------------------------------------------------------------------------------------------------------------------
+# Pulse Sink Default
+#
+# Shows a prompt of all available sinks and sets the selection as the default, moving all active streams to it as well.
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Unique notification ID for this action.
+NID='0x800101'
+
+# Dirty `sed` hell, just so the output is pretty. Don't know how to make it nicer.
+SINKS=$(
+  pacmd list-sinks | # Lists available sinks.
+    grep -e 'index: ' -e 'device.description = ' | # Greps relevant info.
+    sed -E 's/^\s*device\.description = "(.*)"/\1/' | # Removes device description prefix.
+    sed -E '/index:.*$/{N;s/\n/ /}' | # Removes newline on index lines.
+    sed -E 's/^  \* (.*)/\1 🔉/' | # Replaces default sink marker with a speaker emoji at the end.
+    sed -E 's/^\s*index:\s*(.*)/\1/g' # Removes the index and emphasizes index.
+)
+
+# Don't run the script if it's useless to do so.
+SINK_COUNT=$(echo "$SINKS" | wc -l)
+[ "$SINK_COUNT" = 0 ] &&
+  dunstify -r "$NID" "⚠️ Cannot Change Audio Sink" "No sinks detected." &&
+  exit 1
+[ "$SINK_COUNT" = 1 ] &&
+  dunstify -r "$NID" "⚠️ Cannot Change Audio Sink" "Already using the single option available." &&
+  exit 1
+
+# Choose a new default sink or exit.
+SELECTION=$(echo "$SINKS" | rofi -dmenu -theme vmenu -i -p "Choose a default sink:" || exit)
+SINK_INDEX=$(echo "$SELECTION" | cut -d ' ' -f 1)
+
+# Update the default sink only if different.
+! echo "$SELECTION" | grep -e '🔉' &&
+  pacmd set-default-sink "$SINK_INDEX" &&
+  dunstify -r "$NID" -u low "🔉 Changed Audio Device"
+
+# Move all active sources to default sink:
+for INPUT in $(pacmd list-sink-inputs | grep -e 'index:' | sed -nE 's/^.*\s([0-9]+).*$/\1/p'); do
+  echo "$INPUT > $SINK_INDEX"
+  pacmd move-sink-input "$INPUT" "$SINK_INDEX"
+done

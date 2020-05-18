@@ -136,5 +136,18 @@ super + F1
 # Audio
 # -----------------------------------------------------------------------------
 
+# Volume Control - Lower / Raise
 { XF86AudioLowerVolume, XF86AudioRaiseVolume }
     pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+
+# Volume Control - Mute / Unmute
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Volume Control - Change Default Output
+super + XF86AudioMute
+    pulse-sink-default
+
+# Pulse Loopback Toggle
+super + alt + XF86AudioMute
+    pulse-loopback
