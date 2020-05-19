@@ -26,8 +26,8 @@ fi
 # Load or unload the module.
 case "$1" in
 'on')
-  pactl load-module module-loopback \
-    latency_msec=1 sink_dont_move=true max_latency_msec=10 &&
+  pactl load-module module-loopback latency_msec=1 max_latency_msec=10 \
+    sink_dont_move=true sink=@DEFAULT_SINK@ &&
     dunstify -r "$NID" -u low '🎙️ Loopback Enabled.'
   ;;
 'off')
