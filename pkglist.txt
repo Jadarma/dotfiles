@@ -14,6 +14,7 @@ brave-bin                   # Web browser.
 bspwm                       # Tiling Window Manager
 cli-visualizer              # Music visualisation in the terminal.
 dunst                       # Notification daemon.
+exa                         # Modern ls replacement.
 frece                       # CLI tool for frequency and recency databases.
 maim                        # Screenshot tool.
 neofetch                    # Obligatory /r/unixporn requirement.

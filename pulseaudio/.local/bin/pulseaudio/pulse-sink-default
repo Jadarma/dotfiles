@@ -28,7 +28,8 @@ SINK_COUNT=$(echo "$SINKS" | wc -l)
   exit 1
 
 # Choose a new default sink or exit.
-SELECTION=$(echo "$SINKS" | rofi -dmenu -theme vmenu -i -p "Choose a default sink:" || exit)
+SELECTION=$(echo "$SINKS" | rofi -dmenu -theme vmenu -i -p "Choose a default sink:")
+[ -z "$SELECTION" ] && exit
 SINK_INDEX=$(echo "$SELECTION" | cut -d ' ' -f 1)
 
 # Update the default sink only if different.
