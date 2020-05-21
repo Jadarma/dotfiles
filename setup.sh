@@ -23,12 +23,9 @@ chmod -R 744 "$HOME/public"
 stow -v -t "$HOME" alacritty bspwm dunst font gtk hosts lock picom polybar \
   resources rofi scripts sxhkd vis xdg xorg zsh
 
-# Create alias for .zprofile
-ln -sf "$HOME/.profile" "$HOME/.zprofile"
-
 # Source env variables for this install script as well
 # shellcheck source=$HOME/.profile
-. "$HOME/.profile"
+. "$HOME/.zprofile"
 
 # Install dependencies
 echo "Installing dependencies.."
