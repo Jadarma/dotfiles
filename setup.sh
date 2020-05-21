@@ -23,8 +23,11 @@ chmod -R 744 "$HOME/public"
 stow -v -t "$HOME" alacritty bspwm dunst font gtk hosts lock picom polybar \
   resources rofi scripts sxhkd vis xdg xorg zsh
 
+# Create alias for .profile, because of LightDM.
+ln -sf "$HOME/.zprofile" "$HOME/.profile"
+
 # Source env variables for this install script as well
-# shellcheck source=$HOME/.profile
+# shellcheck source=$HOME/.zprofile
 . "$HOME/.zprofile"
 
 # Install dependencies
