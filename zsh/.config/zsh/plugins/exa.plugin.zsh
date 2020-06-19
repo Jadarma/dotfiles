@@ -6,9 +6,9 @@
 # -----------------------------------------------------------------------------
 
 # Basic shorthands: l + a for hidden files, l for detail view, t for tree view.
-alias l='exa'
+alias l='exa --icons'
 alias la='l -a'
-alias ll='exa -l --group-directories-first --time-style=long-iso'
+alias ll='l -l --group-directories-first --time-style=long-iso'
 alias lla='ll -a'
 alias lt='ll -T'
 alias lta='lt -a'
