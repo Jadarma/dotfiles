@@ -1,0 +1,11 @@
+.tl-header th, .tl-cell {
+    border-top: 0;
+}
+
+.section-divider {
+    border-bottom: 0;
+}
+
+.tracklist-album, .tracklist-chart, .tracklist-basic, .tracklist-playlist, .tracklist-podcast, .tracklist-popular, .tracklist-station, .tracklist-queue, .tracklist-search {
+    border-bottom: 0;
+}

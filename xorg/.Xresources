@@ -14,6 +14,9 @@ Xft.lcdfilter: lcddefault
 *.background-dark:    #222d32
 *.background-darkest: #1b2529
 *.background-select:  #314549
+*.backgroundDark:     #222d32
+*.backgroundDarkest:  #1b2529
+*.backgroundSelect:   #314549
 *.accent:             #16a085
 *.cursorColor:        #b0bec5
 
