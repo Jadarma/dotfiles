@@ -1,0 +1,70 @@
+@import url("https://use.fontawesome.com/releases/v5.6.3/css/solid.css");
+@import url("https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css");
+
+/*
+ * Overrides for the theme of the flexible alerts plugin.
+ * Because they do not support dark mode and color theming out of the box. :(
+ */
+
+.alert {
+    background: var(--notice-tip-background) !important;
+}
+
+.alert.callout {
+    border: 0 !important;
+    border-radius: 0 !important;
+    border-left: 4px solid !important;
+}
+
+.alert.callout.custom-note {
+    border-left-color: var(--theme-color-blue) !important;
+}
+
+.alert.callout.custom-note .title {
+    color: var(--theme-color-blue);
+}
+
+.alert.callout.custom-tip {
+    border-left-color: var(--theme-color-green) !important;
+}
+
+.alert.callout.custom-tip .title {
+    color: var(--theme-color-green);
+}
+
+.alert.callout.custom-warning {
+    border-left-color: var(--theme-color-yellow) !important;
+}
+
+.alert.callout.custom-warning .title {
+    color: var(--theme-color-yellow);
+}
+
+.alert.callout.custom-danger {
+    border-left-color: var(--theme-color-red) !important; ;
+}
+
+.alert.callout.custom-danger .title {
+    color: var(--theme-color-red);
+}
+
+.alert.flat {
+    border: 0 !important;
+    color: var(--notice-tip-background) !important;
+}
+
+.alert.flat.custom-note {
+    background-color: var(--theme-color-blue) !important;
+}
+
+.alert.flat.custom-tip {
+    background-color: var(--theme-color-green) !important;
+}
+
+.alert.flat.custom-warning {
+    background-color: var(--theme-color-yellow) !important;
+}
+
+.alert.flat.custom-danger {
+    background-color: var(--theme-color-red) !important;
+}

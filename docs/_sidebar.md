@@ -1,6 +1,7 @@
-- Getting Started
-    - [Getting Started](README.md)
-- Installation
-    - [Arch Linux Fresh Install](installation/arch.md)
-    - [Arch Linux Post Install](installation/post_install.md)
-    - [Dotfiles Setup](installation/setup.md)
+- [Getting Started](README.md)
+- [Install Guide](install_guide/00_GettingStarted.md)
+    - [Installation Media](install_guide/10_InstallationMedia.md)
+    - [Disk Formatting](install_guide/20_DiskFormatting.md)
+    - [Base Installation](install_guide/30_BaseInstallation.md)
+    - [Post Installation](install_guide/40_PostInstallation.md)
+    - [Dotfiles Setup](install_guide/50_DotfilesSetup.md)
