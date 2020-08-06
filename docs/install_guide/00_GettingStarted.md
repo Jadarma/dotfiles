@@ -11,12 +11,6 @@ Before you proceed, take note of the following:
 * Unfortunately it uses `systemd-boot` as a bootloader...
   I know, I hate it too, but it works better than GRUB for me.
 
-> [!NOTE]
-> If you are planning to
-> [install on a portable medium](https://wiki.archlinux.org/index.php/Install_Arch_Linux_on_a_removable_medium),
-> you can still follow this guide, but pay attention to the notes _(like this one)_ on each section telling you what
-> needs to be done differently.
-
 ## Table of Contents:
 * [1. Installation Media](install_guide/10_InstallationMedia)
     * [1.1 Get an Arch ISO](install_guide/10_InstallationMedia#_11-get-an-arch-iso)

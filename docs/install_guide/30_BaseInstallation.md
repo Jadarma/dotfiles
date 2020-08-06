@@ -140,9 +140,6 @@ In this guide, we will be using [`systemd-boot`](https://wiki.archlinux.org/inde
 
 First, install the [microcode](https://wiki.archlinux.org/index.php/Microcode) depending on your system's CPU.
 
-> [!NOTE]
-> For portable installations, install and load the microcode for both vendors for increased compatibility with hosts.
-
 ```shell script
 pacman -S amd-ucode
 ```

@@ -55,17 +55,16 @@ Then do the following:
 * Create a new LVM partition for the rest of the drive. (`n <default> <default> <default> 8e00`)
 * Save the changes and exit. (`w`) 
 
-> [!NOTE]
-> For a portable install, LVM is of questionable benefit.
-> It's up to you if you need a separate `/home`.
-> If you decide against it, ignore all further instructions related to it and leave the second partition to it's
-> default `Linux Filesystem` type.
-
 Running `lsblk` again should show the two partitions as `/dev/sdx1` and `/dev/sdx2`.
 
 ## 2.3 LUKS Encryption
 
-Now that we have the desired drive prepared and cleaned, it is time to encrypt it with LUKS.
+The drive is cleaned and partitioned.
+It's time to encrypt it with LUKS.
+
+> [!DANGER]
+> Forgetting the password for your LUKS container results in a permanent loss of access to the drive's contents.
+> Store it in a safe place, like a password manager.
 
 ```shell script
 cryptsetup -v -y \
@@ -135,10 +134,6 @@ lvcreate -L16G volume -n swap
 lvcreate -L64G volume -n root
 lvcreate -l 100%FREE volume -n home
 ```
-
-> [!NOTE]
-> On a portable install, do ***not*** make a swap partition, as we want to minimise I/O operations to prolong the life
-> of our thumb drive.
 
 ## 2.5 Filesystem Formatting
 

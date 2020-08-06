@@ -40,8 +40,7 @@ ping archlinux.org
 ```
 
 If you are on a laptop and cannot establish a wired connection, you must first connect to a wireless network.
-For this you must use [iwd](https://wiki.archlinux.org/index.php/Iwd#iwctl), which is already present in the install
-ISO.
+For this you must use [iwd](https://wiki.archlinux.org/index.php/Iwd#iwctl), which is already present on the ISO.
 
 First, find the name of your wireless interface.
 Then, if you're not sure what networks are available, do a scan and take note of the network name _(or SSID)_.
