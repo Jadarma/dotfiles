@@ -5,7 +5,7 @@
 # -----------------------------------------------------------------------------
 
 # Path with all the custom scripts from `$HOME/.local/bin/`
-export PATH="$PATH:$(du -a "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:$//')"
+export PATH="$PATH:$(du -a "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
 
 # XDG User Directories
 export XDG_CONFIG_HOME="$HOME/.config"

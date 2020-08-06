@@ -14,10 +14,7 @@ sed -e '/^[[:space:]]*#/d' pkglist.txt |
 
 # Stow dotfiles.
 stow -v -t "$HOME" alacritty bspwm dunst font gtk hosts lock picom polybar pulseaudio resources rofi scripts spicetify \
-  sxhkd sxiv vis xdg xorg zathura zsh
-
-# Create alias for .profile, for compatibility with LightDM.
-ln -sf "$HOME/.zprofile" "$HOME/.profile"
+  sxhkd sxiv vis xdg zathura zsh
 
 # Create home directories.
 DIRS=('.local' '.local/share' '.cache' '.config' '.ssh'

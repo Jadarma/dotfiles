@@ -39,7 +39,6 @@ xcursor-breeze              # GTK cursor theme.
 xdg-user-dirs               # Tool to define custom directories for stuff.
 xdo                         # X utility for performing actions on windows.
 xorg-server                 # X Display Server, enables graphical mode.
-xorg-xinit                  # X bootstrapping script.
 xorg-xsetroot               # X background and cursor utility.
 xwallpaper                  # X wallpaper setter.
 zathura                     # PDF viewer.
