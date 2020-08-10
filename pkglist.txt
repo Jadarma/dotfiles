@@ -1,11 +1,11 @@
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 # Jadarma's Dotfiles - Package List
 #
-# All the packages that need to be installed for my config to work are listed
-# here. Some come from the standard repo, others from the AUR (Marked with an
-# [A] in the comments. You should be able to install everything using `yay`.
-# -----------------------------------------------------------------------------
-adapta-maia-theme           # GTK Theme
+# All the packages that need to be installed for my config to work are listed here.
+# Some come from the standard repo, others from the AUR (Marked with an [A] in the comments).
+# You should be able to install everything using `yay`.
+# ---------------------------------------------------------------------------------------------------------------------
+# adapta-maia-theme         # [A] GTK Theme (Commented out because AUR build is failing.
 papirus-maia-icon-theme-git # [A] Icon Theme
 alacritty                   # Terminal emulator.
 arandr                      # GTK frontend for xrandr.
@@ -16,6 +16,7 @@ cli-visualizer              # Music visualisation in the terminal.
 dunst                       # Notification daemon.
 exa                         # Modern ls replacement.
 frece                       # CLI tool for frequency and recency databases.
+hsetroot                    # Wallpaper utility, used to set background colors.
 maim                        # Screenshot tool.
 neofetch                    # Obligatory /r/unixporn requirement.
 neovim                      # Saner vim.

@@ -5,9 +5,12 @@
 # This file will be sourced when the graphical session is started (via a DM).
 # Used for starting up programs on launching the graphical environment.
 # ---------------------------------------------------------------------------------------------------------------------
+# shellcheck disable=SC1090
+[ -f "$HOME/.zprofile" ] && . "$HOME/.zprofile"
 
 host_override -s screen_layout.sh           # Optional xRandr Setup
 xrdb "$XDG_DATA_HOME/dotfiles/.Xresources"  # Load Color Resources
+hsetroot -solid '#222d32'                   # Set a default background color.
 xsetroot -cursor_name left_ptr              # Get rid of the default "X" cursor.
 sxhkd &                                     # Hot Key Service
 dunst &                                     # Notification Service
