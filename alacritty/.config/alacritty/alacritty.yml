@@ -12,6 +12,8 @@ window:
     y: 12
   # X Window Title
   title: 'Terminal'
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
   # Window class name. Useful for window composite managers.
   class:
     instance: 'Terminal'
@@ -94,9 +96,6 @@ colors:
     magenta: '0xc792ea'
     cyan:    '0x89ddff'
     white:   '0xeaeaea'
-
-# Allow terminal applications to change Alacritty's window title.
-dynamic_title: true
 
 # Live config reload
 live_config_reload: true
