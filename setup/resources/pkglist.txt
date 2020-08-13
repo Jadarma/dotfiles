@@ -5,41 +5,96 @@
 # Some come from the standard repo, others from the AUR (Marked with an [A] in the comments).
 # You should be able to install everything using `yay`.
 # ---------------------------------------------------------------------------------------------------------------------
-# adapta-maia-theme         # [A] GTK Theme (Commented out because AUR build is failing.
-papirus-maia-icon-theme-git # [A] Icon Theme
-alacritty                   # Terminal emulator.
-arandr                      # GTK frontend for xrandr.
-betterlockscreen            # Lock screen script.
-brave-bin                   # Web browser.
-bspwm                       # Tiling Window Manager
-cli-visualizer              # Music visualisation in the terminal.
-dunst                       # Notification daemon.
-exa                         # Modern ls replacement.
-frece                       # CLI tool for frequency and recency databases.
-hsetroot                    # Wallpaper utility, used to set background colors.
-maim                        # Screenshot tool.
-neofetch                    # Obligatory /r/unixporn requirement.
-neovim                      # Saner vim.
-network-manager-applet      # System tray application for network connectivity.
-noto-fonts                  # Most fonts you'll ever need.
-noto-fonts-emoji            # Font for emoji support.
-pavucontrol                 # GTK frontend for pulseaudio.
-pcmanfm                     # GTK file manager.
-picom                       # Display compositor.
-polybar                     # System bar.
-pulseaudio                  # Sound system.
-rofi-dmenu                  # [A] Dmenu replacement
-sxiv                        # Image viewer.
-sxhkd                       # Hotkey manager.
-ttf-jetbrains-mono          # Perfect monospaced font.
-unclutter                   # Hides mouse cursor on inactivity.
-viewnior                    # GTK image viewer.
-wmname                      # Workaround tool for JavaFX.
-xcursor-breeze              # GTK cursor theme.
-xdg-user-dirs               # Tool to define custom directories for stuff.
-xdo                         # X utility for performing actions on windows.
-xorg-server                 # X Display Server, enables graphical mode.
-xorg-xsetroot               # X background and cursor utility.
-xwallpaper                  # X wallpaper setter.
-zathura                     # PDF viewer.
-zsh-syntax-highlighting     # Syntax highlighting for zsh.
+
+# ---------------------------------------------------------------------------------------------------------------------
+# System Dependencies                                                                     Required System Dependencies.
+# ---------------------------------------------------------------------------------------------------------------------
+lightdm                                 # Display manager, handles user sessions.
+lightdm-slick-greeter                   # [A] Display manager frontend.
+networkmanager                          # Network connection manager and dhcp agent.
+pulseaudio                              # Sound system.
+systemd                                 # Bloated init system.
+xf86-input-libinput                     # X generic input driver.
+xorg-server                             # X display server, enables graphical mode.
+zsh                                     # Best shell.
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Dotfile Dependencies                                                             Directly referenced by the dotfiles.
+# ---------------------------------------------------------------------------------------------------------------------
+# adapta-maia-theme                     # [A] GTK Theme. (Commented because AUR build is failing)
+adapta-gtk-theme                        # GTK Theme (interim replacement for adapta-maia-theme.
+alacritty                               # Terminal emulator.
+betterlockscreen                        # [A] Lock screen script.
+brave-bin                               # Chromium based web browser.
+bspwm                                   # Tiling window manager
+cli-visualizer                          # [A] Music visualisation in the terminal.
+dunst                                   # Notification daemon.
+exa                                     # Modern ls replacement.
+fontconfig                              # Library for configuring and customizing font access.
+frece                                   # [A] CLI tool for frequency and recency databases.
+hsetroot                                # Wallpaper utility, used to set background colors.
+maim                                    # Screenshot tool.
+man-db                                  # A utility for reading man pages.
+man-pages                               # Collection of Linux man pages.
+neovim                                  # Text editor, the saner vim.
+network-manager-applet                  # System tray application for network connectivity.
+noto-fonts                              # Most fonts you'll ever need.
+noto-fonts-emoji                        # Font for emoji support.
+numlockx                                # Turns on the numlock key in X11.
+papirus-maia-icon-theme-git             # [A] Icon theme.
+pcmanfm                                 # GTK file manager.
+picom                                   # Display compositor.
+polybar                                 # System bar.
+rofi-dmenu                              # [A] Dmenu replacement
+rsync                                   # Fast an versatile file copying tool for remote and local files.
+stow                                    # Symlink manager for organising dotfiles.
+sxhkd                                   # Hotkey manager.
+sxiv                                    # Image viewer.
+ttf-jetbrains-mono                      # Perfect monospaced font.
+unclutter                               # Hides mouse cursor on inactivity.
+wmname                                  # Workaround tool for JavaFX.
+xclip                                   # CLI clipboard tool.
+xcursor-breeze                          # GTK cursor theme.
+xdg-user-dirs                           # Tool to define custom directories for stuff.
+xdo                                     # X utility for performing actions on windows.
+xorg-xrandr                             # CLI tool for managing displays
+xorg-xrdb                               # X Resources tool.
+xorg-xsetroot                           # X background and cursor utility.
+xwallpaper                              # X wallpaper setter.
+zathura                                 # PDF viewer.
+zsh-syntax-highlighting                 # Syntax highlighting for zsh.
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Optional Dependencies                                                    Not strictly required but very useful tools.
+# ---------------------------------------------------------------------------------------------------------------------
+ffmpeg                                  # Tool for recording, converting and streaming audio/video files.
+fzf                                     # Fuzzy finder tool.
+gptfdisk                                # CLI partitioning tool for GTP.
+htop                                    # Interactive process viewer.
+imagemagick                             # Image manipulation tools.
+inetutils                               # A collection of common network programs.
+neofetch                                # CLI system information tool.
+pavucontrol                             # GTK frontend for pulseaudio.
+python                                  # High-level scripting language.
+smbclient                               # Allows connecting to SMB fileservers.
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Custom Dependencies                                                                 Extra programs I usually install.
+# ---------------------------------------------------------------------------------------------------------------------
+arandr                                  # GTK frontend for xrandr.
+discord                                 # [A] Slack for gamers.
+firefox                                 # A second browser, just in case.
+gcolor3                                 # GTK3 color picker.
+gimp                                    # Image editor.
+jdk11-openjdk                           # OpenJDK Java 11 development kit.
+jetbrains-toolbox                       # [A] Manager for all JetBrains projects and tools.
+jre11-openjdk                           # OpenJDK Java 11 full runtime environment.
+keepassxc                               # Password manager.
+obs-studio                              # Live streaming and recording.
+paperkey                                # Create paper backups of your private keys.
+signal-desktop                          # [A] Signal private messenger.
+# spotify                               # [A] Music service. (Commented because sometimes automatic gpg import fails)
+# steam                                 # Gaming service. (Commented because it requires multilib repo to be enabled)
+transmission-remote-gtk                 # Transmission client.
+viewnior                                # GTK image viewer.
+yubikey-personalization-gui             # Editor for Yubikey 2FA keys.
