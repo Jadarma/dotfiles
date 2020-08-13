@@ -70,7 +70,7 @@ echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/dotfile_install_tmp
 
 # shellcheck disable=SC2153 # The variable is defined and sourced by setup.conf
 for SUBMODULE in $MODULES; do
-  MODULE_PATH="./conf/modules/$SUBMODULE.zsh"
+  MODULE_PATH="./setup/modules/$SUBMODULE.zsh"
   [[ ! -f "$MODULE_PATH" && "$FAIL_ON_MODULE_ERROR" != true  ]] && {
       warn "Could not find module '$SUBMODULE'. Skipping...";
       continue
