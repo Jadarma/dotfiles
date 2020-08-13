@@ -11,6 +11,7 @@ source "$REPO_DIR/setup/modules/_modulebase.zsh"
 # shellcheck disable=SC2034
 MODULE='Make User'
 moduleInit
+
 # If user exists, skip this module.
 if id -u "$INSTALL_USER" &> /dev/null; then
   info "User '$INSTALL_USER' already exists. Skipping module."

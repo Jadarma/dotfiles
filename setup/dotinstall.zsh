@@ -36,7 +36,6 @@ export REPO_DIR
 [[ -n "$INSTALL_USER" ]] || moduleFail 'Invalid config: No install user defined.'
 USER_ID=$(id -u "$INSTALL_USER" 2>/dev/null)
 [[ -n "$USER_ID" && "$USER_ID" -lt 1000 ]] && moduleFail "Invalid config: Install user cannot be a system user."
-unset USER_ID
 export INSTALL_USER
 
 # shellcheck disable=SC2153 # The variable is defined and sourced by setup.conf
@@ -61,6 +60,7 @@ if [[ -n "$USER_ID" ]]; then
   printf "${YELLOW}Warning! User '%s' already exists. Installing over existing users is experimental and potentially\
  dangerous!$NORMAL\n" "$INSTALL_USER"
 fi
+unset USER_ID
 
 userConfirm "Are you sure you agree to the risks?" || exit 130
 
