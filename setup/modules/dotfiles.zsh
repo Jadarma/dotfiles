@@ -11,7 +11,7 @@ MODULE='Dotfiles'
 moduleInit
 
 info "Copying over dotfiles."
-rsync -rv "$REPO_DIR/source/" "/home/$INSTALL_USER/"
+rsync -rvpog --chmod=740 --chown="$INSTALL_USER:$INSTALL_USER" "$REPO_DIR/source/" "/home/$INSTALL_USER/"
 
 debug "Updating user directories."
 sudo -u "$INSTALL_USER" xdg-user-dirs-update
