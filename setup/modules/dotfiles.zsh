@@ -13,7 +13,16 @@ moduleInit
 info "Copying over dotfiles."
 rsync -rvpog --chmod=740 --chown="$INSTALL_USER:$INSTALL_USER" "$REPO_DIR/source/" "/home/$INSTALL_USER/"
 
-debug "Updating user directories."
-sudo -u "$INSTALL_USER" xdg-user-dirs-update
+info "Creating user directories."
+DIRS=(
+  'desktop' 'docs' 'dl' 'music' 'pictures' 'videos' 'public' 'templates'
+  'docs/repo' 'pictures/screenshots'
+  '.ssh' '.ssh/environment'
+)
+# shellcheck disable=SC2034
+DIR_PATHS=$(printf "/home/$INSTALL_USER/%s " "${DIRS[@]}")
+# shellcheck disable=SC2153
+# shellcheck disable=SC2086
+install -dv -o "$INSTALL_USER" -g "$INSTALL_USER" -m 750 ${=DIR_PATHS} || warn "Could not create xdg-user-dirs."
 
 moduleDone
