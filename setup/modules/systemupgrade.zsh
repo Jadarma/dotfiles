@@ -12,6 +12,6 @@ MODULE='System Update'
 moduleInit
 
 info "Performing a full system update."
-pacman -Syyu || warn "Failed to upgrade system."
+pacman -Syyu --noconfirm || warn "Failed to upgrade system."
 
 moduleDone

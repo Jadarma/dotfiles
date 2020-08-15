@@ -88,3 +88,8 @@ function userConfirm() {
     return 1
   fi
 }
+
+# Performs an rsync call from source ($1) to destination ($2) while making sure the ownership belongs to the user.
+function rsyncUser() {
+  rsync -rvpog --chmod=740 --chown="$INSTALL_USER:$INSTALL_USER" "$1" "$2"
+}
