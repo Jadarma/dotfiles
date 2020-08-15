@@ -5,11 +5,7 @@
 # Makes sure 'yay' the AUR helper is available on the system.
 # If not, installs it with the INSTALL_USER, which should be created by now.
 # ---------------------------------------------------------------------------------------------------------------------
-# shellcheck disable=SC1090
-source "$REPO_DIR/setup/modules/_modulebase.zsh"
-# shellcheck disable=SC2034
-MODULE='AUR Helper'
-moduleInit
+source "setup/modules/_modulebase.zsh" && moduleInit 'AUR Helper' || exit 126
 
 # If yay is already installed, skip.
 YAY_VERSION=$(pacman -Q yay 2>/dev/null)

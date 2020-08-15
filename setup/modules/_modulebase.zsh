@@ -52,12 +52,18 @@ function debug() {
   log "$NORMAL" 'DEBUG' "$1"
 }
 
-# Initializes this module, logging it's beginning and resetting the error counters.
-# Remember to define the $MODULE name before calling this.
+# Initializes this module (named $1). Should be called right after sourcing.
+# - Logs it's beginning and resetting the error counters.
+# - Requires root user.
+# - Sources configuration.
 function moduleInit() {
-  info "Configuring module '$MODULE'..."
+  MODULE=$1
+  REPO_DIR="$(pwd)"
   ERROR_COUNT=0
   WARN_COUNT=0
+  info "Configuring module '$MODULE'..."
+  [[ $EUID == 0 ]] || moduleFail 'Installation needs to be done as root.'
+  source 'setup/conf/dotinstall.conf' || moduleFail "Missing configuration file at $REPO_DIR/setup/conf/dotinstall.conf"
 }
 
 # Logs the status of this module, depending on what errors encountered, if any.

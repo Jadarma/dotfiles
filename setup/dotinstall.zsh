@@ -8,31 +8,9 @@
 # Fully automated apart from a disclaimer prompt and the password input for a new user.
 # Customisable via the editing of `setup/conf/dotinstall.conf`.
 # ---------------------------------------------------------------------------------------------------------------------
-
-# Require root privileges. --------------------------------------------------------------------------------------------
-[[ $EUID == 0 ]] || {
-  printf 'Installation needs to be done as root.\n'
-  exit 1
-}
-
-# Initialize the DotInstall module. -----------------------------------------------------------------------------------
-source setup/modules/_modulebase.zsh || {
-  printf 'Could not initialize module.\nAre you sure you are running the script from the repository root?\n'
-  exit 1
-}
-# shellcheck disable=SC2034 # The variable is used by functions defined in module-base.
-MODULE='DotInstall'
-moduleInit
+source setup/modules/_modulebase.zsh && moduleInit 'DotInstall' || exit 126
 
 # Validate configurations. --------------------------------------------------------------------------------------------
-debug 'Validating dotinstall.conf'
-debug "$(pwd)"
-source setup/conf/dotinstall.conf ||
-  moduleFail 'Setup configuration missing.\nAre you sure you are running the script from the repository root?'
-
-[[ "$(pwd)" == "$REPO_DIR" ]] || moduleFail 'Invalid config: The REPO_DIR does not match current directory.'
-export REPO_DIR
-
 [[ -n "$INSTALL_USER" ]] || moduleFail 'Invalid config: No install user defined.'
 USER_ID=$(id -u "$INSTALL_USER" 2>/dev/null)
 [[ -n "$USER_ID" && "$USER_ID" -lt 1000 ]] && moduleFail "Invalid config: Install user cannot be a system user."

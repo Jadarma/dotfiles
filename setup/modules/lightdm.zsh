@@ -5,11 +5,7 @@
 # Configures LightDM with the Slick Greeter.
 # Assumes the lightdm, lightdm-slick-greeter, and the GTK themes are already installed on the system.
 # ---------------------------------------------------------------------------------------------------------------------
-# shellcheck disable=SC1090
-source "$REPO_DIR/setup/modules/_modulebase.zsh"
-# shellcheck disable=SC2034
-MODULE='LightDM'
-moduleInit
+source "setup/modules/_modulebase.zsh" && moduleInit 'LightDM' || exit 126
 
 info "Setting up display manager."
 

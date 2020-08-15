@@ -4,11 +4,7 @@
 #
 # Installs all dependencies as specified in the 'setup/conf/pkglist.txt'.
 # ---------------------------------------------------------------------------------------------------------------------
-# shellcheck disable=SC1090
-source "$REPO_DIR/setup/modules/_modulebase.zsh"
-# shellcheck disable=SC2034
-MODULE='Package List'
-moduleInit
+source "setup/modules/_modulebase.zsh" && moduleInit 'Package List' || exit 126
 
 debug 'Importing dependency list.'
 PKG_FILE="$REPO_DIR/setup/conf/pkglist.txt"

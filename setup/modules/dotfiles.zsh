@@ -4,11 +4,7 @@
 #
 # Copies all dotfiles from 'source' to the INSTALL_USER's home.
 # ---------------------------------------------------------------------------------------------------------------------
-# shellcheck disable=SC1090
-source "$REPO_DIR/setup/modules/_modulebase.zsh"
-# shellcheck disable=SC2034
-MODULE='Dotfiles'
-moduleInit
+source "setup/modules/_modulebase.zsh" && moduleInit 'Dotfiles' || exit 126
 
 info "Copying over dotfiles."
 rsyncUser "$REPO_DIR/source/" "/home/$INSTALL_USER/"

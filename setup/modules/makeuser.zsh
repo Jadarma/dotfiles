@@ -6,11 +6,7 @@
 # Otherwise, creates the user and their home directory.
 # This user will also be part of the wheel administrator group.
 # ---------------------------------------------------------------------------------------------------------------------
-# shellcheck disable=SC1090
-source "$REPO_DIR/setup/modules/_modulebase.zsh"
-# shellcheck disable=SC2034
-MODULE='Make User'
-moduleInit
+source "setup/modules/_modulebase.zsh" && moduleInit 'Make User' || exit 126
 
 # If user exists, skip this module.
 if id -u "$INSTALL_USER" &> /dev/null; then
