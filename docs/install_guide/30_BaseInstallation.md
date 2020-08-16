@@ -23,7 +23,7 @@ Bootstrap the base system onto the disk.
 This might take a while depending on your connection. 
 
 ```shell script
-pacstrap /mnt base base-devel linux linux-firmware neovim
+pacstrap /mnt base base-devel linux linux-firmware neovim zsh
 ```
 
 > [!TIP]

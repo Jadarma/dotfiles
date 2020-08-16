@@ -43,16 +43,3 @@ You can now ping something to test your connection.
 ```shell script
 ping archlinux.org
 ```
-
-## 4.2 ZSH
-
-I prefer having `zsh` as the default shell, even for `root`, like the Arch installation media does.
-
-```shell script
-pacman -S zsh
-chsh -s /bin/zsh
-ln -sf /bin/zsh /bin/sh
-```
-
-Logout to apply changes.
-Running `echo $0` should now return `-zsh`.
