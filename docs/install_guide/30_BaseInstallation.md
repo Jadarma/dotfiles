@@ -48,28 +48,23 @@ Don't worry, the prompt change is expected.
 arch-chroot /mnt
 ```
 
-## 3.3 Hostname
-
-Choose a [hostname](https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname) to uniquely identify
-your machine on your network.
-
-```shell script
-echo JadarmaPC > /etc/hostname
-```
-
-Then edit your `/etc/hosts` to contain the following:
-
-```
-127.0.0.1      localhost
-::1            localhost
-127.0.1.1      JadarmaPC.localdomain JadarmaPC
-```
+## 3.3 Network Access
 
 We are currently getting our network connection from the Arch ISO.
 If we boot into the actual installation we won't have any internet connection.
 We will handle network configuration later;
 we just need to have these packages available.
 (You can omit `iwd` if your device does not have Wi-Fi capabilities.)
+
+> [!TIP]
+> By default, `networkmanager` will use `wpa_supplicant` for wireless connections.
+> There is a way to use `iwd` as a backend instead, explained
+> [here](https://wiki.archlinux.org/index.php/NetworkManager#Using_iwd_as_the_Wi-Fi_backend).
+
+```shell script
+pacman -S networkmanager inetutils iwd
+systemctl enable NetworkManager iwd
+```
 
 ## 3.4 Root Password
 

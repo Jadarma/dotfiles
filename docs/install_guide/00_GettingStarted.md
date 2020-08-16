@@ -27,7 +27,7 @@ Before you proceed, take note of the following:
 * [3. Base Installation](install_guide/30_BaseInstallation)
     * [3.1 Mounting Volumes](install_guide/30_BaseInstallation#_31-mounting-volumes)
     * [3.2 Bootstrapping](install_guide/30_BaseInstallation#_32-bootstrapping)
-    * [3.3 Hostname](install_guide/30_BaseInstallation#_34-hostname)
+    * [3.3 Network Access](install_guide/30_BaseInstallation#_33-network-access)
     * [3.4 Root Password](install_guide/30_BaseInstallation#_34-root-password)
     * [3.5 Initramfs](install_guide/30_BaseInstallation#_35-initramfs)
     * [3.6 Boot Loader](install_guide/30_BaseInstallation#_36-boot-loader)
