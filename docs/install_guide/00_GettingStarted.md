@@ -35,8 +35,6 @@ Before you proceed, take note of the following:
 * [4. Post Installation](install_guide/40_PostInstallation)
     * [4.1 Network Configuration](install_guide/40_PostInstallation#_41-network-configuration)
     * [4.2 ZSH](install_guide/40_PostInstallation#_42-zsh)
-    * [4.3 User Accounts](install_guide/40_PostInstallation#_43-user-accounts)
-    * [4.4 AUR Helper](install_guide/40_PostInstallation#_44-aur-helper)
 * [5. Dotfiles Setup](install_guide/50_DotfilesSetup)
     * [5.1 Clone the Repository](install_guide/50_DotfilesSetup#_51-clone-the-repository)
     * [5.2 Setup Script](install_guide/50_DotfilesSetup#_52-setup-script)
