@@ -4,39 +4,48 @@
 It is finally time to install the dotfiles.
 
 > [!WARNING]
-> The setup has not yet been fully completed.
-> The provided script is basic and _will_ be changed in the future.
-> However, it works for testing purposes.
+> The setup script is a working prototype, but has not yet been fully completed.
+> It might be changed in the future.
 
 ## 5.1 Clone the Repository
 
-Choose any location you'd like. To avoid cluttering my home directory, I usually
-go for something like `~/docs/repo`.
+Choose any location you'd like.
+I usually go for `/tmp`.
 
+Just clone the repository somewhere then `cd` into it.
 ```shell script
-mkdir -p ~/docs/repo/dotfiles
-git clone https://github.com/Jadarma/dotfiles.git ~/docs/repo/dotfiles
+mkdir /tmp/dotfiles
+git clone https://github.com/Jadarma/dotfiles.git /tmp/dotfiles
+cd /tmp/dotfiles
 ```
 
 ## 5.2 Setup Script
 
+The script is automated and reads its configuration from the `setup/conf/dotinstall.conf` file.
+Here, you can edit various options to customise your installation to your liking.
+You definitely want to edit this file to set your own values, as it comes preconfigured with my own settings.
+
+Each config variable is documented.
+Read more details there. 
+
+```shell script
+nvim setup/conf/dotinstall.conf
+```
+
+Once you are satisfied with your settings, just run the main script.
+You will be prompted for a disclaimer, and a password for the new user, if necessary.
+
+```shell script
+zsh setup/dotinstall.zsh
+```
+
 > [!DANGER]
-> ***This script doesn't work, it's never been tested.***
->
 > The setup process was intended to be used on a fresh install.
 > If you are trying to install this over your existing setup, I would recommend
 > you just do it manually, by following the commands in the script.
 > Proceed at your own risk.
 
-```shell script
-cd ~/docs/repo/dotfiles
-zsh setup.zsh
-```
-
-You will be prompted for passwords when installing the dependencies.
-
 ## 5.3 Installation Complete
 
-Run `reboot`, you will be greeted by the login screen.
-
-That's it! Enjoy your new setup!
+You may now reboot and be greeted by the login screen.\
+**That's it! Enjoy your new setup!**
