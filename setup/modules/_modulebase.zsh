@@ -88,7 +88,7 @@ function requireConfig() {
   for CONF_VAR; do
     debug "here $CONF_VAR"
     # shellcheck disable=SC2157
-    [[ -n "\$$CONF_VAR" ]] || fail "Missing configuration: '$CONF_VAR'"
+    [[ -n "${(P)CONF_VAR}" ]] || fail "Missing configuration: '$CONF_VAR'"
   done
 }
 
