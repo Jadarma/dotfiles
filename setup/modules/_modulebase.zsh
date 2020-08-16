@@ -83,6 +83,15 @@ function moduleFail() {
     exit 1
 }
 
+# Takes in a list of config variables names and checks their existence in dotinstall.conf, otherwise fails the module.
+function requireConfig() {
+  for CONF_VAR; do
+    debug "here $CONF_VAR"
+    # shellcheck disable=SC2157
+    [[ -n "\$$CONF_VAR" ]] || moduleFail "Missing configuration: '$CONF_VAR'"
+  done
+}
+
 # Prompts the user the given question ($1) and completes successfully if the user presses 'y'.
 function userConfirm() {
   if read -rq "?$BRIGHT$MAGENTA > $1 (y/N): $NORMAL"; then

@@ -8,6 +8,8 @@
 # ---------------------------------------------------------------------------------------------------------------------
 source "setup/modules/_modulebase.zsh" && moduleInit 'Make User' || exit 126
 
+requireConfig INSTALL_USER
+
 # If user exists, skip this module.
 if id -u "$INSTALL_USER" &> /dev/null; then
   info "User '$INSTALL_USER' already exists. Skipping module."

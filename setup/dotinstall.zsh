@@ -11,13 +11,11 @@
 source setup/modules/_modulebase.zsh && moduleInit 'DotInstall' || exit 126
 
 # Validate configurations. --------------------------------------------------------------------------------------------
-[[ -n "$INSTALL_USER" ]] || moduleFail 'Invalid config: No install user defined.'
+requireConfig INSTALL_USER MODULES
+
 USER_ID=$(id -u "$INSTALL_USER" 2>/dev/null)
 [[ -n "$USER_ID" && "$USER_ID" -lt 1000 ]] && moduleFail "Invalid config: Install user cannot be a system user."
-export INSTALL_USER
 
-# shellcheck disable=SC2153 # The variable is defined and sourced by setup.conf
-[[ -n "$MODULES" ]] || moduleFail 'Invalid config: Missing module list.'
 debug 'Validation of setup.conf successful.'
 
 # Show disclaimer, get user confirmation before continuing. -----------------------------------------------------------

@@ -6,8 +6,10 @@
 # ---------------------------------------------------------------------------------------------------------------------
 source "setup/modules/_modulebase.zsh" && moduleInit 'Package List' || exit 126
 
+requireConfig INSTALL_USER
+
 debug 'Importing dependency list.'
-PKG_FILE="$REPO_DIR/setup/conf/pkglist.txt"
+PKG_FILE="./setup/conf/pkglist.txt"
 [[ -r "$PKG_FILE" ]] || moduleFail 'Cannot install dependencies. Missing pkglist.txt.'
 
 # Reads the pkglist, removing all commented or empty lines and saves list into an array.

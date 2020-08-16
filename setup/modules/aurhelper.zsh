@@ -7,6 +7,8 @@
 # ---------------------------------------------------------------------------------------------------------------------
 source "setup/modules/_modulebase.zsh" && moduleInit 'AUR Helper' || exit 126
 
+requireConfig INSTALL_USER
+
 # If yay is already installed, skip.
 YAY_VERSION=$(pacman -Q yay 2>/dev/null)
 [[ -n "$YAY_VERSION" ]] && {

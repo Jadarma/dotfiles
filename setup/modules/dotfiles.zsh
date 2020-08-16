@@ -6,8 +6,10 @@
 # ---------------------------------------------------------------------------------------------------------------------
 source "setup/modules/_modulebase.zsh" && moduleInit 'Dotfiles' || exit 126
 
+requireConfig INSTALL_USER
+
 info "Copying over dotfiles."
-rsyncUser "$REPO_DIR/source/" "/home/$INSTALL_USER/"
+rsyncUser "./source/" "/home/$INSTALL_USER/"
 
 info "Creating user directories."
 DIRS=(
@@ -22,6 +24,6 @@ DIR_PATHS=$(printf "/home/$INSTALL_USER/%s " "${DIRS[@]}")
 install -dv -o "$INSTALL_USER" -g "$INSTALL_USER" -m 750 ${=DIR_PATHS} || warn "Could not create xdg-user-dirs."
 
 info "Copying over dotfiles."
-rsyncUser "$REPO_DIR/" "/home/$INSTALL_USER/docs/repo/dotfiles/" || warn "Could not save dotfiles copy."
+rsyncUser "./" "/home/$INSTALL_USER/docs/repo/dotfiles/" || warn "Could not save dotfiles copy."
 
 moduleDone
