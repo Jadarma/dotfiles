@@ -14,7 +14,7 @@ source setup/modules/_modulebase.zsh && moduleInit 'DotInstall' || exit 126
 requireConfig INSTALL_USER MODULES
 
 USER_ID=$(id -u "$INSTALL_USER" 2>/dev/null)
-[[ -n "$USER_ID" && "$USER_ID" -lt 1000 ]] && moduleFail "Invalid config: Install user cannot be a system user."
+[[ -n "$USER_ID" && "$USER_ID" -lt 1000 ]] && fail "Invalid config: Install user cannot be a system user."
 
 debug 'Validation of setup.conf successful.'
 
@@ -38,7 +38,7 @@ if [[ -n "$USER_ID" ]]; then
 fi
 unset USER_ID
 
-userConfirm "Are you sure you agree to the risks?" || exit 130
+userConfirm "Are you sure you agree to the risks?" || fail 'User cancelled.'
 
 # Loop over the modules. ----------------------------------------------------------------------------------------------
 debug 'Adding temporary NOPASSWD modifier to sudoers.'

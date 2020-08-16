@@ -20,12 +20,12 @@ YAY_VERSION=$(pacman -Q yay 2>/dev/null)
 debug "Installing 'yay' as $INSTALL_USER..."
 YAY_GIT='/tmp/yay'
 rm -rf "$YAY_GIT" >/dev/null # Cleanup in case of previous failed execution, just in case.
-cd /tmp || moduleFail 'Failed to cd into the temp forder.'
-curl -sO https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz || moduleFail 'Failed to download sources.'
-tar -xf yay.tar.gz || moduleFail 'Failed to unpack sources.'
+cd /tmp || fail 'Failed to cd into the temp forder.'
+curl -sO https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz || fail 'Failed to download sources.'
+tar -xf yay.tar.gz || fail 'Failed to unpack sources.'
 chmod 777 "$YAY_GIT"
-cd "$YAY_GIT" || moduleFail 'Failed to cd into yay git directory.'
-sudo -u "$INSTALL_USER" makepkg --noconfirm -si || moduleFail 'Failed to makepkg yay.'
+cd "$YAY_GIT" || fail 'Failed to cd into yay git directory.'
+sudo -u "$INSTALL_USER" makepkg --noconfirm -si || fail 'Failed to makepkg yay.'
 cd "$REPO_DIR" || warn 'Failed to cd back into the repo dir.'
 rm -rf "$YAY_GIT" || warm 'Could not clean up yay-repo in /tmp/yay-git. Manual cleanup required.'
 

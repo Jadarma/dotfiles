@@ -70,17 +70,17 @@ function moduleInit() {
 # Does not halt the module, you have to exit manually.
 function moduleDone() {
   case "$ERROR_COUNT,$WARN_COUNT" in
-    0,0) info "${GREEN}Module '$MODULE' configured successfully!$NORMAL" ;;
-    0,*) warn 'Module configured, but with warnings.' ;;
-    *) error 'Failed to configure module.' ;;
+  0,0) info "${GREEN}Module '$MODULE' configured successfully!$NORMAL" ;;
+  0,*) warn 'Module configured, but with warnings.' ;;
+  *) error 'Failed to configure module.' ;;
   esac
 }
 
 # Like error(), but also forces the early exit out the module script.
-function moduleFail() {
-    error "$1"
-    moduleDone
-    exit 1
+function fail() {
+  error "$1"
+  moduleDone
+  exit 1
 }
 
 # Takes in a list of config variables names and checks their existence in dotinstall.conf, otherwise fails the module.
@@ -88,7 +88,7 @@ function requireConfig() {
   for CONF_VAR; do
     debug "here $CONF_VAR"
     # shellcheck disable=SC2157
-    [[ -n "\$$CONF_VAR" ]] || moduleFail "Missing configuration: '$CONF_VAR'"
+    [[ -n "\$$CONF_VAR" ]] || fail "Missing configuration: '$CONF_VAR'"
   done
 }
 

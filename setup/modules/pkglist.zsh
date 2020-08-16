@@ -10,7 +10,7 @@ requireConfig INSTALL_USER
 
 debug 'Importing dependency list.'
 PKG_FILE="./setup/conf/pkglist.txt"
-[[ -r "$PKG_FILE" ]] || moduleFail 'Cannot install dependencies. Missing pkglist.txt.'
+[[ -r "$PKG_FILE" ]] || fail 'Cannot install dependencies. Missing pkglist.txt.'
 
 # Reads the pkglist, removing all commented or empty lines and saves list into an array.
 PACKAGES=("${(@f)$(sed -E '/^\s*#/d' "$PKG_FILE" | sed -E '/^\s*$/d' | sed -E "s/^([a-z0-9-]+)\s*#.*$/\1/")}")

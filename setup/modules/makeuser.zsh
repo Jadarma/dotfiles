@@ -18,7 +18,7 @@ if id -u "$INSTALL_USER" &> /dev/null; then
 fi
 
 debug "User '$INSTALL_USER' not found. Creating."
-useradd -m -G wheel -s /bin/zsh "$INSTALL_USER" || moduleFail "Could not create user."
+useradd -m -G wheel -s /bin/zsh "$INSTALL_USER" || fail "Could not create user."
 debug "Removing bash junk from user home."
 rm -v /home/"$INSTALL_USER"/.bash*
 debug "Enforcing permissions on home dir."
