@@ -20,7 +20,7 @@ YAY_VERSION=$(pacman -Q yay 2>/dev/null)
 debug "Installing 'yay' as $INSTALL_USER..."
 YAY_GIT='/tmp/yay'
 rm -rf "$YAY_GIT" >/dev/null # Cleanup in case of previous failed execution, just in case.
-cd /tmp || fail 'Failed to cd into the temp forder.'
+cd /tmp || fail 'Failed to cd into the temp folder.'
 curl -sO https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz || fail 'Failed to download sources.'
 tar -xf yay.tar.gz || fail 'Failed to unpack sources.'
 chmod 777 "$YAY_GIT"
