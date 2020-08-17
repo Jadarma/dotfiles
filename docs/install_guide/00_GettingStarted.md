@@ -32,12 +32,10 @@ Before you proceed, take note of the following:
     * [3.5 Initramfs](install_guide/30_BaseInstallation#_35-initramfs)
     * [3.6 Boot Loader](install_guide/30_BaseInstallation#_36-boot-loader)
     * [3.7. Unmount and Reboot](install_guide/30_BaseInstallation#_37-unmount-and-reboot)
-* [4. Post Installation](install_guide/40_PostInstallation)
-    * [4.1 Network Configuration](install_guide/40_PostInstallation#_41-network-configuration)
-* [5. Dotfiles Setup](install_guide/50_DotfilesSetup)
-    * [5.1 Clone the Repository](install_guide/50_DotfilesSetup#_51-clone-the-repository)
-    * [5.2 Setup Script](install_guide/50_DotfilesSetup#_52-setup-script)
-    * [5.3 Installation Complete](install_guide/50_DotfilesSetup#_53-installation-complete)
+* [4. Dotfiles Setup](install_guide/40_DotfilesSetup)
+    * [4.1 Clone the Repository](install_guide/40_DotfilesSetup#_41-clone-the-repository)
+    * [4.2 Setup Script](install_guide/40_DotfilesSetup#_42-setup-script)
+    * [4.3 Installation Complete](install_guide/40_DotfilesSetup#_43-installation-complete)
 
 ---
 

@@ -1,13 +1,17 @@
-# 5. Dotfiles Setup {docsify-ignore-all}
+# 4. Dotfiles Setup {docsify-ignore-all}
 ---
-
-It is finally time to install the dotfiles.
 
 > [!WARNING]
 > The setup script is a working prototype, but has not yet been fully completed.
 > It might be changed in the future.
 
-## 5.1 Clone the Repository
+Now that you have a minimal Arch install, it is finally time to install the dotfiles.
+
+There are only two prerequisites to running it: `zsh` and `git`, both of which we already installed during
+bootstrapping.
+To double check you can use `pacman -Q zsh git`.
+
+## 4.1 Clone the Repository
 
 Choose any location you'd like.
 I usually go for `/tmp`.
@@ -19,7 +23,7 @@ git clone https://github.com/Jadarma/dotfiles.git /tmp/dotfiles
 cd /tmp/dotfiles
 ```
 
-## 5.2 Setup Script
+## 4.2 Setup Script
 
 The script is automated and reads its configuration from the `setup/conf/dotinstall.conf` file.
 Here, you can edit various options to customise your installation to your liking.
@@ -45,7 +49,7 @@ zsh setup/dotinstall.zsh
 > you just do it manually, by following the commands in the script.
 > Proceed at your own risk.
 
-## 5.3 Installation Complete
+## 4.3 Installation Complete
 
 You may now reboot and be greeted by the login screen.\
 **That's it! Enjoy your new setup!**
