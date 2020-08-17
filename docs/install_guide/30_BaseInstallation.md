@@ -23,7 +23,7 @@ Bootstrap the base system onto the disk.
 This might take a while depending on your connection. 
 
 ```shell script
-pacstrap /mnt base base-devel linux linux-firmware neovim zsh
+pacstrap /mnt base base-devel linux linux-firmware neovim zsh git
 ```
 
 > [!TIP]
@@ -52,19 +52,37 @@ arch-chroot /mnt
 
 We are currently getting our network connection from the Arch ISO.
 If we boot into the actual installation we won't have any internet connection.
-We will handle network configuration later;
-we just need to have these packages available.
-(You can omit `iwd` if your device does not have Wi-Fi capabilities.)
-
-> [!TIP]
-> By default, `networkmanager` will use `wpa_supplicant` for wireless connections.
-> There is a way to use `iwd` as a backend instead, explained
-> [here](https://wiki.archlinux.org/index.php/NetworkManager#Using_iwd_as_the_Wi-Fi_backend).
 
 ```shell script
-pacman -S networkmanager inetutils iwd
-systemctl enable NetworkManager iwd
+pacman -S networkmanager inetutils
+systemctl enable NetworkManager
 ```
+
+If your device does not have Wi-Fi capabilities, you may skip to the next step.
+
+For Wi-Fi, I recommend going with the newer `iwd`, which is what we have used in the Arch ISO.
+
+```shell script
+pacman -S iwd
+systemctl enable iwd
+```
+
+Next, configure NetworkManager to 
+[use iwd as a backend](https://wiki.archlinux.org/index.php/NetworkManager#Using_iwd_as_the_Wi-Fi_backend).
+
+Simply create the `/etc/NetworkManager/conf.d/wifi_backend.conf` file with the following contents:
+
+```text
+[device]
+wifi.backend=iwd
+```
+
+That's it.
+You will now be able to have network access from your own machine after installation.
+
+> [!NOTE]
+> NetworkManager takes control of `iwd`, so you cannot use `iwctl` to connect to wireless networks anymore.
+> Instead, use `nmcli`, as [described on the Wiki](https://wiki.archlinux.org/index.php/NetworkManager#Usage).
 
 ## 3.4 Root Password
 
@@ -80,7 +98,7 @@ the installation.
 In `/etc/sudoers`, uncomment the following lines. (Use `wq!` to bypass readonly file warning.)
 
 ```text
-%wheel ALL=(ALL) NOPASSWD: ALL
+%wheel ALL=(ALL) ALL
 ```
 
 ## 3.5 Initramfs
