@@ -53,6 +53,7 @@ sxiv                                    # Image viewer.
 ttf-jetbrains-mono                      # Perfect monospaced font.
 unclutter                               # Hides mouse cursor on inactivity.
 wmname                                  # Workaround tool for JavaFX.
+xarchiver                               # Lightweight GTK3 archive viewer.
 xclip                                   # CLI clipboard tool.
 xcursor-breeze                          # GTK cursor theme.
 xdg-user-dirs                           # Tool to define custom directories for stuff.
@@ -67,16 +68,21 @@ zsh-syntax-highlighting                 # Syntax highlighting for zsh.
 # ---------------------------------------------------------------------------------------------------------------------
 # Optional Dependencies                                                    Not strictly required but very useful tools.
 # ---------------------------------------------------------------------------------------------------------------------
+evince                                  # Generates thumbnails for PDF files.
 ffmpeg                                  # Tool for recording, converting and streaming audio/video files.
+ffmpegthumbnailer                       # Generates thumbnails for video files.
 fzf                                     # Fuzzy finder tool.
 gptfdisk                                # CLI partitioning tool for GTP.
+gvfs-smb                                # Allows accessing Samba shares through file managers.
 htop                                    # Interactive process viewer.
 imagemagick                             # Image manipulation tools.
 inetutils                               # A collection of common network programs.
 neofetch                                # CLI system information tool.
 pavucontrol                             # GTK frontend for pulseaudio.
 python                                  # High-level scripting language.
-smbclient                               # Allows connecting to SMB fileservers.
+smbclient                               # Allows connecting to SMB file servers.
+unrar                                   # Enables support for reading RAR archives.
+unzip                                   # Enables support for reading ZIP archives.
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Custom Dependencies                                                                 Extra programs I usually install.
