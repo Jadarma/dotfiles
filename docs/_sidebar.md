@@ -3,5 +3,4 @@
     - [Installation Media](install_guide/10_InstallationMedia.md)
     - [Disk Formatting](install_guide/20_DiskFormatting.md)
     - [Base Installation](install_guide/30_BaseInstallation.md)
-    - [Post Installation](install_guide/40_PostInstallation.md)
-    - [Dotfiles Setup](install_guide/50_DotfilesSetup.md)
+    - [Dotfiles Setup](install_guide/40_DotfilesSetup.md)

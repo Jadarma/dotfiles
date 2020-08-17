@@ -23,7 +23,7 @@ Bootstrap the base system onto the disk.
 This might take a while depending on your connection. 
 
 ```shell script
-pacstrap /mnt base base-devel linux linux-firmware neovim
+pacstrap /mnt base base-devel linux linux-firmware neovim zsh git
 ```
 
 > [!TIP]
@@ -48,65 +48,60 @@ Don't worry, the prompt change is expected.
 arch-chroot /mnt
 ```
 
-## 3.3 Locale and Timezones
-
-> [!NOTE]
-> The examples from this section are filled with my own preferences.
-> Mix and match these with your own variants.
-
-Update your system time and select a timezone:
-
-```shell script
-timedatectl set-ntp true
-ln -sf /usr/share/zoneinfo/Europe/Bucharest /etc/localtime
-hwclock --systohc --utc
-```
-
-Set the locale.
-I recommend using `en_DK` for that sweet ISO 8601 date format.
-
-```shell script
-echo "en_DK.UTF-8 UTF-8" >> /etc/locale.gen # Or edit the file and uncomment it.
-locale-gen
-echo "LANG=en_DK.UTF-8" > /etc/locale.conf
-```
-
-## 3.4 Hostname
-
-Choose a [hostname](https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname) to uniquely identify
-your machine on your network.
-
-```shell script
-echo JadarmaPC > /etc/hostname
-```
-
-Then edit your `/etc/hosts` to contain the following:
-
-```
-127.0.0.1      localhost
-::1            localhost
-127.0.1.1      JadarmaPC.localdomain JadarmaPC
-```
+## 3.3 Network Access
 
 We are currently getting our network connection from the Arch ISO.
 If we boot into the actual installation we won't have any internet connection.
-We will handle network configuration later;
-we just need to have these packages available.
-(You can omit `iwd` if your device does not have Wi-Fi capabilities.)
 
 ```shell script
-pacman -S connman inetutils iwd
+pacman -S networkmanager inetutils
+systemctl enable NetworkManager
 ```
 
-## 3.5 Root Password
+If your device does not have Wi-Fi capabilities, you may skip to the next step.
 
-Set the password for the `root`.
+For Wi-Fi, I recommend going with the newer `iwd`, which is what we have used in the Arch ISO.
+
+```shell script
+pacman -S iwd
+systemctl enable iwd
+```
+
+Next, configure NetworkManager to 
+[use iwd as a backend](https://wiki.archlinux.org/index.php/NetworkManager#Using_iwd_as_the_Wi-Fi_backend).
+
+Simply create the `/etc/NetworkManager/conf.d/wifi_backend.conf` file with the following contents:
+
+```text
+[device]
+wifi.backend=iwd
+```
+
+That's it.
+You will now be able to have network access from your own machine after installation.
+
+> [!NOTE]
+> NetworkManager takes control of `iwd`, so you cannot use `iwctl` to connect to wireless networks anymore.
+> Instead, use `nmcli`, as [described on the Wiki](https://wiki.archlinux.org/index.php/NetworkManager#Usage).
+
+## 3.4 Root Password
+
+Set the password for the `root` account.
 
 ```shell script
 passwd
 ```
 
-## 3.6 Initramfs
+It's also a good idea to enable the wheel group, so you can run commands as root with other administrator users after
+the installation.
+
+In `/etc/sudoers`, uncomment the following lines. (Use `wq!` to bypass readonly file warning.)
+
+```text
+%wheel ALL=(ALL) ALL
+```
+
+## 3.5 Initramfs
 
 Because we are using 
 [LVM on LUKS](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS), we need to add
