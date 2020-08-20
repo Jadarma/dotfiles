@@ -24,7 +24,6 @@ zsh                                     # Best shell.
 # adapta-maia-theme                     # [A] GTK Theme. (Commented because AUR build is failing)
 adapta-gtk-theme                        # GTK Theme (interim replacement for adapta-maia-theme.
 alacritty                               # Terminal emulator.
-betterlockscreen                        # [A] Lock screen script.
 brave-bin                               # Chromium based web browser.
 bspwm                                   # Tiling window manager
 cli-visualizer                          # [A] Music visualisation in the terminal.
@@ -33,6 +32,7 @@ exa                                     # Modern ls replacement.
 fontconfig                              # Library for configuring and customizing font access.
 frece                                   # [A] CLI tool for frequency and recency databases.
 hsetroot                                # Wallpaper utility, used to set background colors.
+light-locker                            # Enables locking current session via LightDM.
 maim                                    # Screenshot tool.
 man-db                                  # A utility for reading man pages.
 man-pages                               # Collection of Linux man pages.

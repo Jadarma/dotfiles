@@ -18,4 +18,5 @@ nm-applet &                                 # Networking Tray
 picom --daemon                              # Display Compositor
 unclutter &                                 # Hides Inactive Cursor
 alacritty &                                 # Emergency Terminal
+light-locker &                              # Screen locking daemon.
 notify-send 'Welcome!'                      # Greeting
