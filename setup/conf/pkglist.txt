@@ -62,7 +62,8 @@ xorg-xrandr                             # CLI tool for managing displays
 xorg-xrdb                               # X Resources tool.
 xorg-xsetroot                           # X background and cursor utility.
 xwallpaper                              # X wallpaper setter.
-zathura                                 # PDF viewer.
+zathura                                 # Document viewer.
+zathura-pdf-poppler                     # Adds PDF support for zathura.
 zsh-syntax-highlighting                 # Syntax highlighting for zsh.
 
 # ---------------------------------------------------------------------------------------------------------------------
