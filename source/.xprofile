@@ -14,7 +14,6 @@ hsetroot -solid '#263238'                   # Set a default background color.
 xsetroot -cursor_name left_ptr              # Get rid of the default "X" cursor.
 sxhkd &                                     # Hot Key Service
 dunst &                                     # Notification Service
-pulseaudio --start                          # Audio Service
 nm-applet &                                 # Networking Tray
 picom --daemon                              # Display Compositor
 unclutter &                                 # Hides Inactive Cursor
