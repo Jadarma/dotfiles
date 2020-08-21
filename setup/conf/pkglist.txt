@@ -36,6 +36,7 @@ light-locker                            # Enables locking current session via Li
 maim                                    # Screenshot tool.
 man-db                                  # A utility for reading man pages.
 man-pages                               # Collection of Linux man pages.
+mpv                                     # Video player.
 neovim                                  # Text editor, the saner vim.
 network-manager-applet                  # System tray application for network connectivity.
 noto-fonts                              # Most fonts you'll ever need.
