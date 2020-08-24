@@ -22,9 +22,6 @@ sudo -u "$INSTALL_USER" yay -Q "${PACKAGES[@]}" &>/dev/null && {
   exit 0
 }
 
-debug 'Enabling multicore building'
-sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
-
 debug 'Installing package dependencies.'
 # shellcheck disable=SC2128
 for PACKAGE in $PACKAGES; do
