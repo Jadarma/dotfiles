@@ -10,7 +10,6 @@
     anchor:     north;
     location:   north;
     width:      100%;
-    height:     24px;
     orientation: horizontal;
     children:   [ prompt, entry, listview ];
 }
