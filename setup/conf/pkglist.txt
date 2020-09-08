@@ -92,6 +92,7 @@ unzip                                   # Enables support for reading ZIP archiv
 # ---------------------------------------------------------------------------------------------------------------------
 arandr                                  # GTK frontend for xrandr.
 discord                                 # [A] Slack for gamers.
+filelight                               # Simple and elegant disk space visualiser.
 firefox                                 # A second browser, just in case.
 gcolor3                                 # GTK3 color picker.
 gimp                                    # Image editor.
