@@ -46,6 +46,7 @@ papirus-maia-icon-theme-git             # [A] Icon theme.
 pcmanfm                                 # GTK file manager.
 picom                                   # Display compositor.
 polybar                                 # System bar.
+qt5-styleplugins                        # Used to make QT applications look like GTK.
 rofi-dmenu                              # [A] Dmenu replacement
 rsync                                   # Fast an versatile file copying tool for remote and local files.
 stow                                    # Symlink manager for organising dotfiles.
