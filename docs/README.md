@@ -1,8 +1,25 @@
 # Jadarma's Dotfiles {docsify-ignore-all}
 
-Welcome! This is a documentation / written tutorial for my dotfiles repo. 
+Welcome! This is the documentation for my dotfiles repo. 
 
-***(This section is still under construction.)***
+### Getting Started
+
+The preferred method of installation is to do a fresh install of Arch, then run the automated setup script.
+Please follow the [Installation Guide](install/00_GettingStarted.md) for details.
+
+If, however, you wish to copy specific configurations only, all dotfiles are available in the `source` directory.
+Keep in mind that some configurations depend on other programs as well.
+
+After installation, you will be thrown into the graphical environment without much information.
+Most things are keyboard-driven.
+To learn how to use my setup, what features are available, and how to tweak the configurations to suit your tastes,
+please read the [Usage Guide](features/UsageGuide.md) section.
+
+### Screenshots
+
+![Clean](img/clean.png)
+
+![Busy](img/busy.png)
 
 > [!WARNING]
 > The dotfile repo is still in "early" development stage.
