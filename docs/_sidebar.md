@@ -5,4 +5,4 @@
   - [Base Installation](install/30_BaseInstallation.md)
   - [Dotfiles Setup](install/40_DotfilesSetup.md)
 - [Usage Guide](features/UsageGuide.md)
-  - [Shorcuts (sxhkd)](features/sxhkd.md)
+  - [Hotkeys](features/Hotkeys.md)

@@ -8,5 +8,7 @@ you need a short recap on hand.
 
 ## Table of Contents:
 
+* [Hotkeys](features/Hotkeys.md)
+
 ***(This section is still under construction.)***
 
