@@ -1,6 +1,35 @@
 @import url("https://use.fontawesome.com/releases/v5.6.3/css/solid.css");
 @import url("https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css");
 
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/eot/JetBrainsMono-Regular.eot') format('embedded-opentype'),
+    url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
+    url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/web/woff/JetBrainsMono-Regular.woff') format('woff'),
+    url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/ttf/JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    /* Theme colors: */
+    --theme-color: #16a085;
+    --theme-color-red: #ff5370;
+    --theme-color-green: #c3e88d;
+    --theme-color-yellow: #ffcb6b;
+    --theme-color-blue: #82aaff;
+    --theme-color-magenta: #c792ea;
+    --theme-color-cyan: #89ddff;
+    --link-color: var(--theme-color);
+
+    /* Fonts: */
+    --base-font-family: "Fira Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --code-font-family: "JetBrains Mono", "Fira Code", Inconsolata, Consolas, Courier, monospace;
+    -webkit-font-feature-settings: "liga" on, "calt" on;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
 /*
  * Overrides for the theme of the flexible alerts plugin.
  * Because they do not support dark mode and color theming out of the box. :(
@@ -41,7 +70,7 @@
 }
 
 .alert.callout.custom-danger {
-    border-left-color: var(--theme-color-red) !important; ;
+    border-left-color: var(--theme-color-red) !important;;
 }
 
 .alert.callout.custom-danger .title {
