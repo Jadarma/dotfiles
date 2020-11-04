@@ -3,7 +3,7 @@
 #
 # All the packages that need to be installed for my config to work are listed here.
 # Some come from the standard repo, others from the AUR (Marked with an [A] in the comments).
-# You should be able to install everything using `yay`.
+# You should be able to install everything using `paru`.
 # ---------------------------------------------------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------------------------------------------------

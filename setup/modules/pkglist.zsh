@@ -16,7 +16,7 @@ PKG_FILE="./setup/conf/pkglist.txt"
 PACKAGES=("${(@f)$(sed -E '/^\s*#/d' "$PKG_FILE" | sed -E '/^\s*$/d' | sed -E "s/^([a-z0-9-]+)\s*#.*$/\1/")}")
 
 # If they are already all installed, skip.
-sudo -u "$INSTALL_USER" yay -Q "${PACKAGES[@]}" &>/dev/null && {
+sudo -u "$INSTALL_USER" paru -Q "${PACKAGES[@]}" &>/dev/null && {
   debug 'All packages are present!'
   moduleDone
   exit 0
@@ -26,10 +26,10 @@ debug 'Installing package dependencies.'
 # shellcheck disable=SC2128
 for PACKAGE in $PACKAGES; do
   debug "Installing $PACKAGE"
-  sudo -u "$INSTALL_USER" yay -S --needed --noconfirm "$PACKAGE" || warn "Failed to install $PACKAGE."
+  sudo -u "$INSTALL_USER" paru -S --needed --noconfirm "$PACKAGE" || warn "Failed to install $PACKAGE."
 done
 
 debug 'Double checking dependencies.'
-sudo -u "$INSTALL_USER" yay -Q "${PACKAGES[@]}" 2>/dev/null || warn "Some packages are missing."
+sudo -u "$INSTALL_USER" paru -Q "${PACKAGES[@]}" 2>/dev/null || warn "Some packages are missing."
 
 moduleDone
