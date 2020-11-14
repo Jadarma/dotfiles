@@ -24,6 +24,7 @@ zsh                                     # Best shell.
 # adapta-maia-theme                     # [A] GTK Theme. (Commented because AUR build is failing)
 adapta-gtk-theme                        # GTK Theme (interim replacement for adapta-maia-theme.
 alacritty                               # Terminal emulator.
+bat                                     # Improved version of `cat` with pretty printing and colored output.
 brave-bin                               # Chromium based web browser.
 bspwm                                   # Tiling window manager
 cli-visualizer                          # [A] Music visualisation in the terminal.
