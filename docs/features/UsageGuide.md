@@ -9,6 +9,7 @@ you need a short recap on hand.
 ## Table of Contents:
 
 * [Hotkeys](features/Hotkeys.md)
+* [Window Management](features/WindowManagement.md)
 
 ***(This section is still under construction.)***
 

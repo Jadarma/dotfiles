@@ -6,3 +6,4 @@
   - [Dotfiles Setup](install/40_DotfilesSetup.md)
 - [Usage Guide](features/UsageGuide.md)
   - [Hotkeys](features/Hotkeys.md)
+  - [Window Management](features/WindowManagement.md)
