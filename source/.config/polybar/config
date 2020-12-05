@@ -1,8 +1,10 @@
-; -----------------------------------------------------------------------------
-; Configuration optimised for a triple monitor configuration
-; -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
+# POLYBAR Config
+#
+# This is where all the modules and resources are pooled together, and bars are defined.
+# ---------------------------------------------------------------------------------------------------------------------
 
-; Import Common Themes and Configuration --------------------------------------
+# Import Common Themes and Configuration ------------------------------------------------------------------------------
 [colors]
 include-file = $XDG_CONFIG_HOME/polybar/resources/colors.ini
 
@@ -15,7 +17,7 @@ screenchange-reload = true
 [global/wm]
 margin-bottom = 0
 
-; Import Common Modules to be used --------------------------------------------
+# Import Common Modules to be used ------------------------------------------------------------------------------------
 [module/bspwm]
 include-file = $XDG_CONFIG_HOME/polybar/modules/bspwm.ini
 
@@ -43,7 +45,10 @@ format-underline = ${colors.green}
 [module/xwindow]
 include-file = $XDG_CONFIG_HOME/polybar/modules/xwindow.ini
 
-; Define Bars -----------------------------------------------------------------
+[module/notifications]
+include-file = $XDG_CONFIG_HOME/polybar/modules/notifications.ini
+
+# Define Bars ---------------------------------------------------------------------------------------------------------
 [bar/common]
 inherit = fonts
 width = 100%
@@ -68,6 +73,7 @@ modules-right = pulseaudio date
 [bar/main]
 inherit = bar/common
 monitor = ${env:MONITOR:}
+enable-ipc = true
 modules-left = bspwm xwindow
-modules-right = memory cpu temperature pulseaudio date
+modules-right = memory cpu temperature pulseaudio date notifications
 tray-position = right
