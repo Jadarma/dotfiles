@@ -33,6 +33,7 @@ exa                                     # Modern ls replacement.
 fontconfig                              # Library for configuring and customizing font access.
 frece                                   # [A] CLI tool for frequency and recency databases.
 hsetroot                                # Wallpaper utility, used to set background colors.
+jq                                      # A CLI tool for parsing JSON.
 light-locker                            # Enables locking current session via LightDM.
 maim                                    # Screenshot tool.
 man-db                                  # A utility for reading man pages.
