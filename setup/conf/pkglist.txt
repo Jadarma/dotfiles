@@ -50,6 +50,7 @@ polybar                                 # System bar.
 qt5-styleplugins                        # Used to make QT applications look like GTK.
 rofi-dmenu                              # [A] Dmenu replacement
 rsync                                   # Fast an versatile file copying tool for remote and local files.
+starship-bin                            # [A] Configurable shell prompt.
 stow                                    # Symlink manager for organising dotfiles.
 sxhkd                                   # Hotkey manager.
 sxiv                                    # Image viewer.

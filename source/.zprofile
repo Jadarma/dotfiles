@@ -28,6 +28,8 @@ export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
 export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+export STARSHIP_CACHE="$XDG_CACHE_HOME/starship/"
 
 # Less Pager Config
 export LESS_TERMCAP_mb=$'\e[1;31m'
