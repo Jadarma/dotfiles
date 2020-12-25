@@ -1,3 +1,9 @@
+! ---------------------------------------------------------------------------------------------------------------------
+! X Resources
+!
+! Defines colors and some general font settings for the X server that can be read by applications.
+! @see https://wiki.archlinux.org/index.php/X_resources
+! ---------------------------------------------------------------------------------------------------------------------
 Xcursor.theme: xcursor-breeze
 Xcursor.size:  16
 Xft.dpi:       96
