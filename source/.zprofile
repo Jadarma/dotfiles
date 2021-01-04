@@ -1,8 +1,9 @@
-# -----------------------------------------------------------------------------
-# PROFILE
+# ---------------------------------------------------------------------------------------------------------------------
+# Z PROFILE
 #
-# Runs on login. This is where environmental variables are set.
-# -----------------------------------------------------------------------------
+# Runs on login. This is where environment variables that normally would not be changed during the lifetime of the user
+# session are declared.
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Path with all the custom scripts from `$HOME/.local/bin/`
 export PATH="$PATH:$(du -a "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
@@ -12,13 +13,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 mkdir -p "$XDG_CACHE_HOME/dotfiles"
-
-# Default Programs
-export TERMINAL="alacritty"
-export FILE="pcmanfm"
-export EDITOR="nvim"
-export BROWSER="brave"
-export READER="zathura"
 
 # Home Directory Cleanup
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
@@ -30,16 +24,6 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 export STARSHIP_CACHE="$XDG_CACHE_HOME/starship/"
-
-# Less Pager Config
-export LESS_TERMCAP_mb=$'\e[1;31m'
-export LESS_TERMCAP_md=$'\e[1;31m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[1;34m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[1;32m'
-export LESSHISTFILE=-
 
 # Other
 export QT_QPA_PLATFORMTHEME="gtk2"
