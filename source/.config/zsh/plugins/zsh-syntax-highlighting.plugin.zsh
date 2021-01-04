@@ -1,16 +1,15 @@
-# -----------------------------------------------------------------------------
-# ZSH SYNTAX HIGHLIGHT
+#!/usr/bin/env zsh
+# ---------------------------------------------------------------------------------------------------------------------
+# ZSH SYNTAX HIGHLIGHTING
 #
 # The commands wirtten in any shell prompt will be syntax highlighted.
-# This file makes modifications so that the color scheme used resembles that
-# of IntelliJ Idea (with Material Oceanic plugin).
+# This file makes modifications so that the color scheme used resembles IntelliJ Idea (with Material Oceanic plugin).
 #
-# If you consider it to be bloat, you can remove all the overrides and leave
-# only the last `source` command.
+# If you consider it to be bloat, you can remove all the overrides and leave only the last `source` command.
 #
 # This requires the `zsh-syntax-highlighting` package to be installed.
 # @see https://github.com/zsh-users/zsh-syntax-highlighting
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 # shellcheck disable=SC2034
 
 typeset -A ZSH_HIGHLIGHT_STYLES

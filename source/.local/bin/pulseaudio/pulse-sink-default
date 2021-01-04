@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # ---------------------------------------------------------------------------------------------------------------------
-# Pulse Sink Default
+# PULSE SINK DEFAULT
 #
 # Shows a prompt of all available sinks and sets the selection as the default, moving all active streams to it as well.
 # ---------------------------------------------------------------------------------------------------------------------

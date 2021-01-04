@@ -1,10 +1,10 @@
-#!/bin/zsh
-# -----------------------------------------------------------------------------
-# Emoji Selector
+#!/usr/bin/env zsh
+# ---------------------------------------------------------------------------------------------------------------------
+# EMOJI SELECTOR
 #
-# Opens a menu that displays all Unicode emojis and allows them to be copied to
-# the clipboard. The entries are sorted by frequency and recency.
-# -----------------------------------------------------------------------------
+# Opens a menu that displays all Unicode emojis and allows them to be copied to the clipboard.
+# The entries are sorted by frequency and recency.
+# ---------------------------------------------------------------------------------------------------------------------
 
 DATA_BASE="$XDG_CACHE_HOME/dotfiles/dmoji.db"
 URL="http://www.unicode.org/Public/emoji/11.0/emoji-test.txt"

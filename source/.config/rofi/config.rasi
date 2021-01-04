@@ -1,9 +1,8 @@
-// ----------------------------------------------------------------------------
-// Rasi Default Config
+// --------------------------------------------------------------------------------------------------------------------
+// ROFI DEFAULT CONFIG
 //
-// By default, rasi will look like a themed dmenu, in a single horizontal line
-// the same size of the statusbar.
-// ----------------------------------------------------------------------------
+// By default, rofi will look like a themed dmenu, in a single horizontal line the same size of the statusbar.
+// --------------------------------------------------------------------------------------------------------------------
 @theme "material-oceanic"
 
 #window {

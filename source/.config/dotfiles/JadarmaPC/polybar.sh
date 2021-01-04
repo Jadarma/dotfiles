@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # ---------------------------------------------------------------------------------------------------------------------
 # Polybar layout for my main machine, JadarmaPC
 # Main bar in center monitor, simple bar in side monitors.

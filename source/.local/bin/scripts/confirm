@@ -1,11 +1,10 @@
-#!/bin/sh
-# -----------------------------------------------------------------------------
-# Confirm
+#!/usr/bin/env sh
+# ---------------------------------------------------------------------------------------------------------------------
+# CONFIRM
 #
-# Show a simple dmenu prompt asking for confirmation of an action, useful for
-# using in other scripts.
+# Show a simple rofi prompt asking for confirmation of an action, useful for using in other scripts.
 # Accepts an optional prompt argument.
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 PROMPT="❔ ${1:-"Are you sure?"}"
 YES="👍 <u><b>Y</b></u>es "
 NO="👎 <u><b>N</b></u>o "

@@ -1,13 +1,13 @@
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 # DUNST NOTIFICATION MANAGER RESOURCE CONFIGURATION
 #
 # This file configures dunst, a notification manager.
 # It governs the behaviour and aspect of on-screen notifications.
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 
 [global]
 
-# Window ----------------------------------------------------------------------
+# Window --------------------------------------------------------------------------------------------------------------
 
 # Which monitor should the notifications be displayed on.
 monitor = 0
@@ -83,7 +83,7 @@ sort = yes
 # for how to disable this if necessary.
 idle_threshold = 120
 
-# Text ------------------------------------------------------------------------
+# Text ----------------------------------------------------------------------------------------------------------------
 
 font = Monospace 10
 
@@ -155,7 +155,7 @@ hide_duplicate_count = false
 # Display indicators for URLs (U) and actions (A).
 show_indicators = yes
 
-# Icons -----------------------------------------------------------------------
+# Icons ---------------------------------------------------------------------------------------------------------------
 
 # Align the icons.
 # Possible values are `left`, `right`, and `off`.
@@ -167,7 +167,7 @@ max_icon_size = 64
 # Paths to default icons.
 # icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
-# History ---------------------------------------------------------------------
+# History -------------------------------------------------------------------------------------------------------------
 
 # Should a notification popped up from history be sticky or timeout as if it
 # would normally do.
@@ -176,7 +176,7 @@ sticky_history = yes
 # Maximum amount of notifications kept in history.
 history_length = 20
 
-# Misc/Advanced ---------------------------------------------------------------
+# Misc/Advanced -------------------------------------------------------------------------------------------------------
 
 # dmenu path.
 dmenu = /bin/dmenu -p dunst:
@@ -213,7 +213,7 @@ verbosity = mesg
 # clipping text and/or icons.
 corner_radius = 0
 
-# Legacy ----------------------------------------------------------------------
+# Legacy --------------------------------------------------------------------------------------------------------------
 
 # Use the Xinerama extension instead of RandR for multi-monitor support.
 # This setting is provided for compatibility with older nVidia drivers that do
@@ -225,7 +225,7 @@ corner_radius = 0
 # changes.
 force_xinerama = false
 
-# Mouse -----------------------------------------------------------------------
+# Mouse ---------------------------------------------------------------------------------------------------------------
 
 # Defines action of mouse events.
 # Possible values are:
@@ -239,7 +239,7 @@ mouse_left_click = do_action
 mouse_middle_click = close_all
 mouse_right_click = close_current
 
-[experimental] # --------------------------------------------------------------
+[experimental] # ------------------------------------------------------------------------------------------------------
 # Features that may or may not work correctly. Do not expect them to have a
 # consistent behaviour across releases.
 
@@ -250,7 +250,7 @@ mouse_right_click = close_current
 # there are multiple screens with very different dpi values.
 per_monitor_dpi = false
 
-[shortcuts] # -----------------------------------------------------------------
+[shortcuts] # ---------------------------------------------------------------------------------------------------------
 # Shortcuts are specified as [modifier+][modifier+]...key
 # Available modifiers are `ctrl`, `mod1` (the alt-key), `mod2`, `mod3`, and
 # `mod4` (windows-key). Xev might be helpful to find names for keys.
@@ -270,7 +270,7 @@ per_monitor_dpi = false
 # Context menu.
 ;context = ctrl+shift+period
 
-# Urgency Appearance ----------------------------------------------------------
+# Urgency Appearance --------------------------------------------------------------------------------------------------
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
 
@@ -298,7 +298,7 @@ timeout = 0
 # Icon for notifications with critical urgency, uncomment to enable.
 # icon = /path/to/icon
 
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

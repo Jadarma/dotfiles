@@ -1,15 +1,15 @@
-#!/bin/zsh
-# -----------------------------------------------------------------------------
-# Snip
+#!/usr/bin/env zsh
+# ---------------------------------------------------------------------------------------------------------------------
+# SNIP
 #
 # Wrapper script that handles the generic usecase of taking screenshots.
-# By default, it captures the whole screen and saves it in the designated
-# screenshot directory.  Also displays a notification if successful.
+# By default, it captures the whole screen and saves it in the designated screenshot directory.
+# Also displays a notification if successful.
 #
 # Available arguments:
 # -c : Copies the image to clipboard rather than saving it to disk.
 # -s : Allows the user to select a specific region.
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Parse arguments.
 while getopts "cs" OPTION; do

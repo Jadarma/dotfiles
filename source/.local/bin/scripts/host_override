@@ -1,11 +1,11 @@
-#!/bin/zsh
-# -----------------------------------------------------------------------------
-# Host Override
+#!/usr/bin/env zsh
+# ---------------------------------------------------------------------------------------------------------------------
+# HOST OVERRIDE
 #
 # Runs a script with the given name from the dotfile host override folder.
 # -w : Also notify the user that the override does not exist.
 # -s : Mute all output, including errors.
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 while getopts "ws" OPTION; do
   case $OPTION in
   w) WARN=1 ;;

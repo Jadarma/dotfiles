@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # ---------------------------------------------------------------------------------------------------------------------
 # BSPWM desktop layout for my main machine, JadarmaPC
 # Three desktops per screen, from left to right: 4,5,6,1,2,3,7,8,9

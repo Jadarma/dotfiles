@@ -1,10 +1,10 @@
-#!/bin/sh
-# -----------------------------------------------------------------------------
-# SXIV Key Handler
+#!/usr/bin/env sh
+# ---------------------------------------------------------------------------------------------------------------------
+# SXIV KEY HANDLER
 #
-# This is called by sxiv when activating script mode via Ctrl+X.
+# This is called by `sxiv` when activating script mode via Ctrl+X.
 # The selected file(s)'s path is read into $FILE.
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 while read -r FILE; do
   case "$1" in
   'C-c') # Copy image to clipboard

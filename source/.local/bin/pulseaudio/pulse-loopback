@@ -1,15 +1,15 @@
-#!/bin/sh
-# -----------------------------------------------------------------------------
-# Pulse Loopback
+#!/usr/bin/env sh
+# ---------------------------------------------------------------------------------------------------------------------
+# PULSE LOOPBACK
 #
 # Synopsis: pulse-loopback [ on | off ]
 #
-# Controls the PulseAudio loopback module, if you're like me and like hearing
-# your voice and keyboard clack when wearing headphones.
+# Controls the PulseAudio loopback module, if you're like me and like hearing your voice and keyboard clack when using
+# headphones.
 # Calling with no argument toggles, otherwise enables or disables.
 # Always selects the current default sink as an output, which cannot be moved!
 # This is to prevent unwanted feedback loops when switching to speakers.
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Unique notification ID for this action.
 NID='0x800100'

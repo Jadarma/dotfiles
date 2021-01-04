@@ -1,9 +1,9 @@
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 # ZSH RESOURCE CONFIGURATION
 #
 # This file will be sourced by all interactive shells (most commonly the ones
 # you type in). This is where plugins, themes and the like are defined.
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Load Plugins
 for plugin in $ZDOTDIR/plugins/*.plugin.zsh; do

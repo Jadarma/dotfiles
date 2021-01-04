@@ -1,10 +1,9 @@
-#!/bin/sh
-# -----------------------------------------------------------------------------
-# BSPWM Resource Configuration
+#!/usr/bin/env sh
+# ---------------------------------------------------------------------------------------------------------------------
+# BSPWM RESOURCE CONFIGURATION
 #
-# This script initialises BSPWM. Desktops, behavior, rules, as well as color
-# preferences are set.
-# -----------------------------------------------------------------------------
+# This script initialises BSPWM. Desktops, behavior, rules, as well as color preferences are set.
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Workaround for Java GUIs to render properly.
 wmname LG3D

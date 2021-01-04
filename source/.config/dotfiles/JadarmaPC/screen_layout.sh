@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # ---------------------------------------------------------------------------------------------------------------------
 # Screen layout for my main machine, JadarmaPC
 # Simple triple 1080p displays in landscape.

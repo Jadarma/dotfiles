@@ -1,12 +1,12 @@
-#!/bin/sh
-# -----------------------------------------------------------------------------
-# BSPWM Focus
+#!/usr/bin/env sh
+# ---------------------------------------------------------------------------------------------------------------------
+# BSPWM FOCUS
 #
-# Focus the node in the given direction. If in monocle mode, will cycle through
-# previous / next, otherwise will use direction provided.
+# Focus the node in the given direction. If in monocle mode, will cycle through previous / next, otherwise will use
+# direction provided.
 #
 # Usage: node_focus_dir (west|north|south|east)
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 
 case $1 in
 west | north | south | east) ;;

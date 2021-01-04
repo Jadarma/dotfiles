@@ -1,10 +1,9 @@
-#!/bin/zsh
-# -----------------------------------------------------------------------------
-# Mansplain
+#!/usr/bin/env sh
+# ---------------------------------------------------------------------------------------------------------------------
+# MANSPLAIN
 #
-# Shows a rofi prompt for the manual entries of user commands and configuration
-# files.
-# -----------------------------------------------------------------------------
+# Shows a rofi prompt for the manual entries of user commands and configuration files.
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Get the manual entry.
 CHOICE=$(man -s 1,5 -k . | rofi -dmenu -theme vmenu -columns 3 -i -p "Help:")

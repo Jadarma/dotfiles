@@ -1,10 +1,10 @@
-#!/bin/sh
-# -----------------------------------------------------------------------------
-# BSPWM External Rules
+#!/usr/bin/env sh
+# ---------------------------------------------------------------------------------------------------------------------
+# BSPWM EXTERNAL RULES
 #
 # This script applies more complicated rules for BSPWM.
 # Rules shouldn't be declared here if they can be done with the default syntax.
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------
 
 WID=$1   # Window ID
 CLASS=$2 # Window Class Name
