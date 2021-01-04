@@ -6,11 +6,11 @@
 # -----------------------------------------------------------------------------
 
 # Basic shorthands: l + a for hidden files, l for detail view, t for tree view.
-alias l='exa --icons'
+alias l='exa'
 alias la='l -a'
 alias ll='l -l --group-directories-first --time-style=long-iso'
 alias lla='ll -a'
-alias lt='ll -T'
+alias lt='ll -T -I ".git|node_modules"'
 alias lta='lt -a'
 
 # Shows a tree view of current git repo, filtering just the changed files.
@@ -18,7 +18,7 @@ alias lta='lt -a'
 function lg() {
   REPO=$(git rev-parse --show-toplevel)
   [ -z "$REPO" ] && return 1
-  lta -I ".git" --git --color=always "$REPO" | awk -e '$6 !~ /--|I/ { print }'
+  lta --git --color=always "$REPO" | awk -e '$6 !~ /--|I/ { print }'
 }
 
 # Some color overrides.
