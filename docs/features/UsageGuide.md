@@ -8,7 +8,7 @@ you need a short recap on hand.
 
 ## Table of Contents:
 
-* [Hotkeys](/features/Hotkeys)
-* [Window Management](/features/WindowManagement)
+* [Hotkeys](../Hotkeys)
+* [Window Management](../WindowManagement)
 
 ***(This section is still under construction.)***
