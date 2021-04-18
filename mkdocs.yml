@@ -1,0 +1,38 @@
+site_name: Dotfiles
+repo_url: https://github.com/Jadarma/dotfiles
+repo_name: Jadarma/dotfiles
+copyright: Copyright &copy; 2020 - 2021 Dan Cîmpianu
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: teal
+    accent: teal
+  language: en
+  font:
+    text: Roboto
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.expand
+    - navigation.tabs
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.keys
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang: en
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https:/github.com/Jadarma

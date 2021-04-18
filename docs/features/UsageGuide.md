@@ -1,4 +1,4 @@
-# Usage Guide {docsify-ignore-all}
+# Usage Guide
 ---
 
 In this section you will find write-ups on most used tools, programs, and custom scripts.
@@ -8,8 +8,7 @@ you need a short recap on hand.
 
 ## Table of Contents:
 
-* [Hotkeys](features/Hotkeys.md)
-* [Window Management](features/WindowManagement.md)
+* [Hotkeys](/features/Hotkeys)
+* [Window Management](/features/WindowManagement)
 
 ***(This section is still under construction.)***
-

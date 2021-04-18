@@ -1,4 +1,4 @@
-# 1. Installation Media {docsify-ignore-all}
+# Installation Media
 ---
 
 While it is possible to 
@@ -7,18 +7,19 @@ it is recommended you do a fresh install, since it reduces the variables involve
 This guide assumes you are installing from an Arch ISO loaded from a USB Flash drive.
 
 ## 1.1 Get an Arch ISO
+
 To set up the drive, download the latest [Arch Linux ISO](https://www.archlinux.org/download/) and verify the signature
-_(Optional)_.\
-[Flash](https://wiki.archlinux.org/index.php/USB_flash_installation_medium) it to your drive with `dd`, for example.\
+_(Optional)_.
+[Flash](https://wiki.archlinux.org/index.php/USB_flash_installation_medium) it to your drive with `dd`, for example.
 Get the block device name of your USB drive, here `/dev/sdx`.
 
-```shell script
+```shell
 sudo lsblk 
 sudo dd if=/path/to/iso of=/dev/sdx bs=4096 status=progress
 ```
 
-> [!DANGER]
-> Selecting the wrong device might lead to you overwriting your own data!
+!!! danger
+    Selecting the wrong device might lead to you overwriting your own data!
 
 Now plug the drive into the host you wish to install to and boot into the Arch ISO.
 
@@ -27,7 +28,7 @@ Now plug the drive into the host you wish to install to and boot into the Arch I
 Ensure that your system is UEFI capable.
 If the following directory is not empty, it is.
 
-```shell script
+```shell
 ls /sys/firmware/efi
 ```
 
@@ -35,7 +36,7 @@ ls /sys/firmware/efi
 
 If you are using a device with a wired connection, check your connection:
 
-```shell script
+```shell
 ping archlinux.org
 ```
 
@@ -45,9 +46,9 @@ For this you must use [iwd](https://wiki.archlinux.org/index.php/Iwd#iwctl), whi
 First, find the name of your wireless interface.
 Then, if you're not sure what networks are available, do a scan and take note of the network name _(or SSID)_.
 Finally, connect to the network;
-you will pe prompted for a password if necessary.
+you will be prompted for a password if necessary.
 
-```shell script
+```shell
 iwctl device list                   # > $DEVICE
 iwctl station $DEVICE get-networks. # > $SSID
 iwctl station $DEVICE connect $SSID
@@ -59,7 +60,7 @@ Pinging a server should now work.
 
 Update your system clock with the following command:
 
-```shell script
+```shell
 timedatectl set-ntp true
 ```
 
@@ -69,7 +70,7 @@ In case your ISO was made long ago, it might be that your mirrors are out of dat
 some packages.
 To update them:
 
-```shell script
+```shell
 pacman -Syy pacman-mirrorlist archlinux-keyring
 pacman-key --refresh-keys
 mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist

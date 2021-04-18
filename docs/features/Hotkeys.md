@@ -1,4 +1,4 @@
-# Hotkeys {docsify-ignore-all}
+# Hotkeys
 
 All _"system-wide"_ keyboard shortcuts are bound using the Simple X Hotkey Daemon, or `sxhkd` for short.
 
@@ -7,7 +7,7 @@ All _"system-wide"_ keyboard shortcuts are bound using the Simple X Hotkey Daemo
 The daemon must run in order to register events.
 It is usually ran on user login, in this case via `.xprofile`:
 
-```shell script
+```shell
 sxhkd &
 ```
 
@@ -17,12 +17,12 @@ The following keybindings are available:
 
 | Key Combination | Action                         |
 |:---------------:|--------------------------------|
-| `Super + ESC`   | Reload the configuration file. |
+| ++super+esc++   | Reload the configuration file. |
 
-> [!NOTE]
-> Only sxhkd related bindings are shown here.
-> Each feature should document its own added hotkeys.
-> To view all bounded hotkeys, you can just print the configuration file.
+!!! note
+    Only sxhkd related bindings are shown here.
+    Each feature should document its own added hotkeys.
+    To view all bounded hotkeys, you can just print the configuration file.
 
 ## Configuration
 The configuration file can be found at `.config/sxhkd/sxhkdrc`.
@@ -43,6 +43,6 @@ super + {_, alt} + h
 In this example, a notification will appear, having a positive or negative message depending on whether the `alt`
 modifier was pressed.
 
-## Read More:
+## Read More
 - GitHub: [baskerville/sxhkd](https://github.com/baskerville/sxhkd)
 - ArchWiki: [sxhkd](https://wiki.archlinux.org/index.php/Sxhkd)
