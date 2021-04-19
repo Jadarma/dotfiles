@@ -12,7 +12,8 @@
 lightdm                                 # Display manager, handles user sessions.
 lightdm-slick-greeter                   # [A] Display manager frontend.
 networkmanager                          # Network connection manager and dhcp agent.
-pulseaudio                              # Sound system.
+pipewire                                # Multimedia framework.
+pipewire-pulse                          # Drop-in replacement for Pulseaudio.
 systemd                                 # Bloated init system.
 xf86-input-libinput                     # X generic input driver.
 xorg-server                             # X display server, enables graphical mode.
