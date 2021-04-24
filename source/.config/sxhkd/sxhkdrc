@@ -148,6 +148,6 @@ XF86AudioMute
 super + XF86AudioMute
     pulse-sink-default
 
-# Pulse Loopback Toggle
+# Audio Loopback Toggle
 super + alt + XF86AudioMute
-    pulse-loopback
+    pw-loopback-toggle

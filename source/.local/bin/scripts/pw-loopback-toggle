@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+# ---------------------------------------------------------------------------------------------------------------------
+# PIPE-WIRE LOOPBACK TOGGLE
+#
+# A short and sweet wrapper over the `pw-loopback` utility that toggles the loopback on or off, keeping the loopback
+# process in a background job.
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Unique notification ID for this action.
+NID='0x800100'
+
+# Get the pid of the previous loopback, if any.
+LOOPBACK_PID=$(pidof pw-loopback)
+
+if [[ -z "$LOOPBACK_PID" ]]; then
+  pw-loopback &!
+  dunstify -r "$NID" -u low '🎙️ Loopback Enabled.'
+else
+  kill "$LOOPBACK_PID"
+  dunstify -r "$NID" -u low '🎙️ Loopback Disabled.'
+fi
