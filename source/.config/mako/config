@@ -1,0 +1,43 @@
+# ---------------------------------------------------------------------------------------------------------------------
+# MAKO
+#
+# Notification daemon for Wayland.
+# This file defines appearance and behaviour.
+# See `man 5 mako`.
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Global Configuration Options
+max-history=10
+sort=-time
+
+# Binding Options
+on-button-left=invoke-default-action
+on-button-middle=dismiss-group
+on-button-right=dismiss
+on-touch=dismiss
+on-notify=none
+
+# Style Options
+width=400
+height=150
+font=monospace 10
+
+[urgency=low]
+background-color=#263238
+text-color=#B0BEC5
+border-color=#314549
+
+[urgency=normal]
+background-color=#222d32
+text-color=#B0BEC5
+border-color=#16A085
+
+[urgency=critical]
+background-color=#263238
+text-color=#EAEAEA
+border-color=#FF5370
+ignore-timeout=1
+default-timeout=0
+
+[app-name=Spotify]
+default-timeout=10000
