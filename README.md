@@ -1,17 +1,6 @@
-# Dotfiles
+# Dotfiles - Wayland (WIP)
 
-**Read the full documentation at [jadarma.github.io/dotfiles](https://jadarma.github.io/dotfiles)!**
+You have stumbled on the Wayland migration branch.
+Tread carefully, as not even I know what I am doing!
 
-## Contents
-
-There are three main directories:
-
-📖 **Documentation** - The `docs` directory contains markdown sources for the documentation.\
-🛠️ **Setup** - The `setup` directory contains scripts that automate the installation process.\
-📃 **Dotfiles** - The `source` directory contains all the dotfiles.
-
-## Preview
-
-![Clean](docs/img/clean.png)
-
-![Busy](docs/img/busy.png)
+**Check out the [master branch](https://github.com/Jadarma/dotfiles) for the Xorg version.**
