@@ -12,5 +12,21 @@
       "8": ["DP-2"],
       "9": ["DP-2"]
     }
+  },
+  "sway/window": {
+    "format": "{title}",
+    "max-length": 100,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "<span size='large'></span>  $1",
+      "(.*) - Brave": "<span size='large'></span>  $1",
+      "(.*) - Pinta": "<span size='large'></span>  Pinta",
+      "WebCord - (.*)": "<span size='large'></span>  $1",
+      "Terminal": "<span size='large'></span>  Terminal",
+      "Spotify": "<span size='large'></span>  Spotify",
+      "Steam": "<span size='large'></span>  Steam",
+      "Volume Control": "<span size='large'></span>  Sound Control",
+      "KeePassXC": "<span size='large'></span> KeePassXC",
+      "(.*)(?: \\[Locked\\])? - KeePassXC": "<span size='large'></span> KeePassXC: $1"
+    }
   }
 }
