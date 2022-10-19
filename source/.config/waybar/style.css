@@ -1,0 +1,53 @@
+@define-color foreground #B0BEC5;
+@define-color background #263238;
+@define-color backgroundDark #222d32;
+@define-color backgroundDarkest #1B2529;
+@define-color backgroundSelect #314549;
+@define-color accent #16a085;
+
+@define-color black #1E272C;
+@define-color red #FF5370;
+@define-color green #C3E88D;
+@define-color yellow #FFCB6B;
+@define-color blue #82AAFF;
+@define-color magenta #C792EA;
+@define-color cyan #89DDFF;
+@define-color white #EAEAEA;
+
+* {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: @foreground;
+}
+
+window#waybar {
+    background-color: @backgroundDark;
+}
+
+/* WORKSPACES ------------------------------------------------------------------------------------------------------ */
+#workspaces button {
+    background-color: @backgroundDarkest;
+    padding: 4px;
+}
+
+#workspaces button:hover label {
+    color: @foreground;
+}
+
+#workspaces button.current_output {
+    background-color: @backgroundDark;
+}
+
+#workspaces button.focused {
+    padding-bottom: 0;
+    border-bottom: 3px solid @accent;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    border: 0;
+}
+
+#workspaces button.urgent label {
+    color: @backgroundDarkest;
+}
