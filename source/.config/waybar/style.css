@@ -15,7 +15,7 @@
 @define-color white #EAEAEA;
 
 * {
-    font-family: "JetBrains Mono", monospace;
+    font-family: "JetBrainsMono Nerd Font", monospace;
     font-size: 13px;
     color: @foreground;
 }

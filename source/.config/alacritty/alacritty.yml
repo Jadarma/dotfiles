@@ -29,7 +29,7 @@ scrolling:
 font:
   normal:
     # Font family
-    family: JetBrains Mono
+    family: 'JetBrainsMono Nerd Font'
     # The `style` can be specified to pick a specific face.
     style: Regular
   bold:
