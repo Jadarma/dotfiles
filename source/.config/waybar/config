@@ -7,10 +7,12 @@
    "fixed-center": true,
    "modules-left": ["sway/workspaces", "sway/mode"],
    "modules-center": ["sway/window"],
-   "modules-right": ["pulseaudio", "clock", "tray"],
+   "modules-right": ["memory", "cpu", "pulseaudio", "clock", "tray"],
    "include":  [
       "$XDG_CONFIG_HOME/waybar/modules/sway.json",
       "$XDG_CONFIG_HOME/waybar/modules/clock.json",
       "$XDG_CONFIG_HOME/waybar/modules/pulseaudio.json",
+      "$XDG_CONFIG_HOME/waybar/modules/cpu.json",
+      "$XDG_CONFIG_HOME/waybar/modules/memory.json",
    ],
 }
