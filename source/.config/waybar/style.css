@@ -25,10 +25,6 @@ window#waybar {
     background-color: @backgroundDark;
 }
 
-.modules-right {
-    margin-right: 8px
-}
-
 /* SWAY ------------------------------------------------------------------------------------------------------------ */
 #workspaces button {
     background-color: @backgroundDarkest;
@@ -60,12 +56,14 @@ window#waybar {
 /* Clock ----------------------------------------------------------------------------------------------------------- */
 #clock {
     padding: 0 4px;
+    margin: 0 4px;
     border-bottom: 2px solid @red;
 }
 
 /* Pulse Audio ----------------------------------------------------------------------------------------------------- */
 #pulseaudio {
     padding: 0 8px;
+    margin: 0 4px;
     border-bottom: 2px solid @yellow;
 }
 
@@ -78,6 +76,7 @@ window#waybar {
 /* CPU ------------------------------------------------------------------------------------------------------------- */
 #cpu {
     padding: 0 8px;
+    margin: 0 4px;
     border-bottom: 2px solid @blue;
 }
 
@@ -90,6 +89,7 @@ window#waybar {
 /* Memory ---------------------------------------------------------------------------------------------------------- */
 #memory {
     padding: 0 8px;
+    margin: 0 4px;
     border-bottom: 2px solid @magenta;
 }
 
