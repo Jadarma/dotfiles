@@ -98,3 +98,14 @@ window#waybar {
     color: @background;
     background-color: @magenta;
 }
+
+/* Idle Inhibitor -------------------------------------------------------------------------------------------------- */
+#idle_inhibitor {
+    padding: 0 4px 0 8px;
+}
+
+#idle_inhibitor.activated {
+    font-weight: 900;
+    color: @background;
+    background-color: @green;
+}
