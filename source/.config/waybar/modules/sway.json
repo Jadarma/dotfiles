@@ -22,6 +22,8 @@
       "(.*) - Pinta": "<span size='large'></span>  Pinta",
       "WebCord - (.*)": "<span size='large'></span>  $1",
       "Terminal": "<span size='large'></span>  Terminal",
+      "Mozilla Firefox": "<span size='large'></span>  Firefox",
+      "Signal": "<span size='large'></span>  Signal",
       "Spotify": "<span size='large'></span>  Spotify",
       "Steam": "<span size='large'></span>  Steam",
       "Volume Control": "<span size='large'></span>  Sound Control",
