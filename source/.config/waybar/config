@@ -2,14 +2,15 @@
    "layer": "top",
    "position": "top",
    "height": 30,
-   "spacing": 4,
+   "spacing": 8,
    "exclusive": true,
    "fixed-center": true,
    "modules-left": ["sway/workspaces", "sway/mode"],
    "modules-center": ["sway/window"],
-   "modules-right": ["clock", "tray"],
+   "modules-right": ["pulseaudio", "clock", "tray"],
    "include":  [
       "$XDG_CONFIG_HOME/waybar/modules/sway.json",
       "$XDG_CONFIG_HOME/waybar/modules/clock.json",
+      "$XDG_CONFIG_HOME/waybar/modules/pulseaudio.json",
    ],
 }

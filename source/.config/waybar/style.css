@@ -24,6 +24,10 @@ window#waybar {
     background-color: @backgroundDark;
 }
 
+.modules-right {
+    margin-right: 8px
+}
+
 /* SWAY ------------------------------------------------------------------------------------------------------------ */
 #workspaces button {
     background-color: @backgroundDarkest;
@@ -54,7 +58,16 @@ window#waybar {
 
 /* Clock ----------------------------------------------------------------------------------------------------------- */
 #clock {
-    padding: 0 8px;
-    margin: 0 4px;
+    padding: 0 4px;
     border-bottom: 2px solid @red;
+}
+
+#pulseaudio {
+    padding: 0 8px;
+    border-bottom: 2px solid @yellow;
+}
+
+#pulseaudio.muted {
+    background-color: @backgroundDarkest;
+    border-bottom: 2px dotted @yellow;
 }
