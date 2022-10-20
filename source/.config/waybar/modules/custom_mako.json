@@ -1,0 +1,12 @@
+{
+  "custom/mako": {
+    "format": "{icon}",
+    "exec": "$XDG_CONFIG_HOME/waybar/scripts/mako_status.zsh",
+    "on-click": "$XDG_CONFIG_HOME/waybar/scripts/mako_status.zsh toggle",
+    "on-click-right": "makoctl dismiss -a",
+    "format-icons": [" "," "],
+    "return-type": "json",
+    "interval": 1,
+    "signal": 1
+  }
+}
