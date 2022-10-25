@@ -1,0 +1,10 @@
+allow_images=true
+content_halign=start
+gtk_dark=true
+image_size=24
+lines=1
+location=top
+no_actions=true
+orientation=horizontal
+term=alacritty
+width=100%
