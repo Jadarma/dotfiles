@@ -19,7 +19,7 @@ if [[ ! -f "$DATA_BASE" ]]; then
 fi
 
 # Show the menu and wait for a selection.
-line=$(frece print "$DATA_BASE" | wofi --dmenu -D orientation=vertical -D lines=11 -D columns=4 -i -p 'Search Emoji…')
+line=$(frece print "$DATA_BASE" | wofi --dmenu -D columns=4 -i -p 'Search Emoji…')
 
 [[ -z $line ]] && exit
 
