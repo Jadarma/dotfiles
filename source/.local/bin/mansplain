@@ -1,12 +1,12 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 # ---------------------------------------------------------------------------------------------------------------------
 # MANSPLAIN
 #
-# Shows a rofi prompt for the manual entries of user commands and configuration files.
+# Shows a wofi prompt for the manual entries of user commands and configuration files.
 # ---------------------------------------------------------------------------------------------------------------------
 
 # Get the manual entry.
-CHOICE=$(man -s 1,5 -k . | rofi -dmenu -theme vmenu -columns 3 -i -p "Help:")
+CHOICE=$(man -s 1,5,7 -k . | wofi --dmenu -i -M multi-contains -p "Search manpages…")
 [ -n "$CHOICE" ] || exit
 
 # Parse selection, update counter and display output.
