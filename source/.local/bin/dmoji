@@ -11,7 +11,7 @@ URL="http://www.unicode.org/Public/emoji/11.0/emoji-test.txt"
 
 # If the database is not found, create one.
 if [[ ! -f "$DATA_BASE" ]]; then
-  notify-send -u low "😀 Emoji Selector" "Updating emoji cache..."
+  notify-send -u low "😀 Emoji Selector" "Updating emoji cache…"
   mkdir -p "$XDG_CACHE_HOME/dotfiles"
   frece init "$DATA_BASE" <(\
     curl -s "$URL" | sed 's/^[^#]*; fully-qualified *# \([^ ]*\)/\1 \t/gp;d'\
