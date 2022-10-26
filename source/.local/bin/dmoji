@@ -25,4 +25,4 @@ line=$(frece print "$DATA_BASE" | wofi --dmenu -D columns=4 -i -p 'Search Emojiâ
 
 # Increment entry and paste.
 frece increment "$DATA_BASE" "$line"
-echo -n "$line" | sed "s/ .*//" | wlcopy
+echo -n "$line" | sed "s/ .*//" | wl-copy
