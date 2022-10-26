@@ -6,16 +6,15 @@
 # process in a background job.
 # ---------------------------------------------------------------------------------------------------------------------
 
-# Unique notification ID for this action.
-NID='0x800100'
-
 # Get the pid of the previous loopback, if any.
 LOOPBACK_PID=$(pidof pw-loopback)
 
 if [[ -z "$LOOPBACK_PID" ]]; then
   pw-loopback &!
-  dunstify -r "$NID" -u low '🎙️ Loopback Enabled.'
+  MESSAGE=' Loopback Enabled.'
 else
   kill "$LOOPBACK_PID"
-  dunstify -r "$NID" -u low '🎙️ Loopback Disabled.'
+  MESSAGE=' Loopback Disabled.'
 fi
+
+notify-send --app-name='pw-loopback-toggle' --urgency='low' --expire-time=1000 "$MESSAGE"
