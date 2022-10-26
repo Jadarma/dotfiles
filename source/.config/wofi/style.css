@@ -2,6 +2,10 @@
     font-family: "JetBrainsMono Nerd Font", monospace;
 }
 
+#input {
+    min-width: 250px;
+}
+
 #img {
     margin-right: 6px;
 }
