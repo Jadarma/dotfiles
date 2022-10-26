@@ -1,19 +1,19 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 # ---------------------------------------------------------------------------------------------------------------------
 # POWER MENU
 #
-# Show a menu prompt in the top left-hand corner for various power options.
+# Show a wofi prompt in for various power options.
 # ---------------------------------------------------------------------------------------------------------------------
 
 OPTION=$(\
   printf '🔒 Lock\n💤 Suspend\n🔌 Shutdown\n♻ ️Restart\n🚪 Logout' |
-  rofi -dmenu -i -p "Power Options:"\
+  wofi --dmenu -D orientation=horizontal -D --lines=1 -i -p "Power Options:"\
 )
 
 case "$OPTION" in
-  *Lock) exec light-locker-command -l ;;
+  *Lock) exec swaylock -f ;;
   *Shutdown) exec systemctl poweroff;;
   *Restart) exec systemctl reboot;;
   *Suspend) exec systemctl suspend;;
-  *Logout) exec bspc quit;;
+  *Logout) exec swaymsg exit;;
 esac
