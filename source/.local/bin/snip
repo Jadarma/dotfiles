@@ -1,0 +1,47 @@
+#!/usr/bin/env zsh
+# ---------------------------------------------------------------------------------------------------------------------
+# SNIP
+#
+# Wrapper script that handles the generic use-case of taking screenshots.
+# By default, it captures the whole screen and saves it in the designated screenshot directory.
+# Also displays a notification if successful.
+#
+# Available arguments:
+# -c : Copies the image to clipboard rather than saving it to disk.
+# -s : Allows the user to select a specific region.
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Parse arguments.
+while getopts "sc" OPTION; do
+  case $OPTION in
+  s) SELECTION=1 ;;
+  c) CLIPBOARD=2 ;;
+  *) exit 1 ;;
+  esac
+done
+
+# Screenshot will be saved to a file regardless, so it can be displayed in the notification.
+if [[ -n $CLIPBOARD ]]; then
+  FILE=$(mktemp /tmp/snip.XXXXXX)
+  LOCATION="<i>Clipboard</i>"
+  trap 'rm $FILE' EXIT
+else
+  SCREENSHOT_DIR=$(xdg-user-dir SCREENSHOTS)
+  mkdir -p "$SCREENSHOT_DIR"
+  FILE="$SCREENSHOT_DIR/screen-$(date +%s).png"
+  LOCATION="<i>$FILE</i>"
+fi
+
+# Take the screenshot, either a selection or the entire output.
+if [[ -n "$SELECTION" ]]; then
+  grim -g "$(slurp)" "$FILE" || exit 2
+else
+  OUTPUT=$(swaymsg -t get_outputs | jq -r '.[] | select(.focused==true).name')
+  grim -o "$OUTPUT" "$FILE" || exit 2
+fi
+
+# Copy the image to the clipboard if applicable.
+[[ -n "$CLIPBOARD" ]] && wl-copy --type image/png < "$FILE"
+
+# Send a notification to confirm screenshot was successful.
+notify-send --app-name='snip' --urgency='low' --icon="$FILE" --expire-time=5000 "Screenshot Saved!" "$LOCATION"
