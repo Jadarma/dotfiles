@@ -32,3 +32,13 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 export STARSHIP_CACHE="$XDG_CACHE_HOME/starship/"
+
+# Less Pager Colors
+export LESS_TERMCAP_mb=$'\e[1;31m'
+export LESS_TERMCAP_md=$'\e[1;31m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[1;34m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;32m'
+export LESSHISTFILE=-
