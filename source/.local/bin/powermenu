@@ -7,7 +7,7 @@
 
 OPTION=$(\
   printf '🔒 Lock\n💤 Suspend\n🔌 Shutdown\n♻ ️Restart\n🚪 Logout' |
-  wofi --dmenu -D orientation=horizontal -D --lines=1 -i -p "Power Options:"\
+  wofi --dmenu -D orientation=horizontal --lines=1 -i -p "Power Options:"\
 )
 
 case "$OPTION" in
