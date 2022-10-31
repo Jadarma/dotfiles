@@ -8,7 +8,7 @@
 # Behaviour -----------------------------------------------------------------------------------------------------------
 set recolor "true"
 set selection-clipboard "clipboard"
-set selection-notification "false"
+#set selection-notification "false"
 set first-page-column 1:1
 
 # Bindings ------------------------------------------------------------------------------------------------------------
