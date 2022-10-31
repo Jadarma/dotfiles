@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+# ---------------------------------------------------------------------------------------------------------------------
+# MOUSETRAP
+#
+# Toggles between restricting mouse cursor movement within the active output.
+# Useful when playing games or have other fullscreen single-monitor applications running.
+# Call with first argument being the input id of your mouse.
+# ---------------------------------------------------------------------------------------------------------------------
+
+MOUSE_ID="$1"
+[[ -z "$MOUSE_ID" ]] && {
+  >&2 echo 'No mouse input ID supplied. Get it via swaymsg -t get_inputs.'
+  exit 1
+}
+
+LOCK="$XDG_CACHE_HOME/.mousetrap-$1.lock"
+
+if [[ -f "$LOCK" ]]; then
+  # Ideally map_to_output '*' but due to a bug it just disables input.
+  # See https://github.com/swaywm/sway/issues/6069 for details.
+  swaymsg input "$MOUSE_ID" map_to_region 0 0 7680 1440
+  rm "$LOCK"
+  notify-send --urgency=low --app-name='mousetrap' -t 3500 '🖱️ Mousetrap' '   <i>Released!</i>'
+else
+  OUTPUT=$(swaymsg -t get_outputs | jq -r '.[] | select(.focused==true).name')
+  swaymsg input "$MOUSE_ID" map_to_output "$OUTPUT"
+  notify-send --urgency=low --app-name='mousetrap' -t 3500 '🖱️ Mousetrap' "   <i>Trapped on $OUTPUT!</i>"
+  touch "$LOCK"
+fi
