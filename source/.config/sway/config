@@ -1,0 +1,15 @@
+# ---------------------------------------------------------------------------------------------------------------------
+# SWAY
+#
+# Wayland compositor similar to i3wm.
+# This is the place to define keybindings, display configurations, and launching other wayland-related programs.
+# See `man 5 sway` for a complete reference.
+# For better readability, this config merely stitches together individual files from `./config.d`.
+# ---------------------------------------------------------------------------------------------------------------------
+set $super Mod4
+set $alt Mod1
+
+bar swaybar_command waybar
+
+include $XDG_CONFIG_HOME/sway/config.d/*
+include /etc/sway/config.d/*
