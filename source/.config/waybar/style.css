@@ -14,7 +14,7 @@
 @define-color cyan #89DDFF;
 @define-color white #EAEAEA;
 
-* {
+label {
     font-family: "JetBrainsMono Nerd Font", monospace;
     font-size: 13px;
     font-weight: 700;
@@ -82,8 +82,11 @@ window#waybar {
 
 #cpu.critical {
     font-weight: 900;
-    color: @background;
     background-color: @blue;
+}
+
+#cpu.critical label {
+    color: @background;
 }
 
 /* Memory ---------------------------------------------------------------------------------------------------------- */
@@ -95,8 +98,11 @@ window#waybar {
 
 #memory.critical {
     font-weight: 900;
-    color: @background;
     background-color: @magenta;
+}
+
+#memory.critical label {
+    color: @background;
 }
 
 /* Idle Inhibitor -------------------------------------------------------------------------------------------------- */
@@ -106,8 +112,11 @@ window#waybar {
 
 #idle_inhibitor.activated {
     font-weight: 900;
-    color: @background;
     background-color: @green;
+}
+
+#idle_inhibitor.activated label {
+    color: @background;
 }
 
 /* Mako ------------------------------------------------------------------------------------------------------------ */
@@ -123,6 +132,9 @@ window#waybar {
 
 #custom-mako.alert {
     font-weight: 900;
-    color: @background;
     background-color: @yellow;
+}
+
+#custom-mako.alert label {
+    color: @background;
 }
