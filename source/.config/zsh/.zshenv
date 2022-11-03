@@ -10,7 +10,7 @@
 export TERMINAL='alacritty'
 export FILE='pcmanfm'
 export EDITOR='nvim'
-export BROWSER='brave'
+export BROWSER='firefox'
 export READER='zathura'
 
 # Path with all the custom scripts from `$HOME/.local/bin/`
