@@ -1,0 +1,43 @@
+#!/usr/bin/env zsh
+# ---------------------------------------------------------------------------------------------------------------------
+# PIPEWIRE DEFAULT SINK
+#
+# Shows a prompt of all available sinks and sets the selection as the default, moving all active streams to it as well.
+# If there are only two sinks in total, switches between them without asking.
+# Uses PulseAudio protocol (pactl).
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Read available sinks. The variable will contain a list of rows, one for each sink excluding the current default,
+# containing the sink name and description delimited by a pipe ('|').
+SINKS=$(
+  pactl list sinks |
+    grep -A3 '^Sink' --group-separator='-----' |
+    awk 'BEGIN { RS = "-----\n"; FS = "\n"; }
+    {
+      sub(/^\s*Name: /,"",$3);
+      sub(/^\s*Description: /,"",$4);
+      print $3 "|" $4;
+    }' |
+    grep -v "$(pactl get-default-sink)"
+)
+
+# Don't run the script if it's useless to do so.
+SINK_COUNT=$(echo "$SINKS" | wc -l)
+if [[ "$SINK_COUNT" = 0 ]]; then
+  notify-send -a 'pw-default-sink' -u critical '⚠ Cannot Change Audio Sink' '   <i>No sinks detected.</i>'
+  exit 1
+fi
+if [[ "$SINK_COUNT" = 1 ]]; then
+  notify-send -a 'pw-default-sink' -u low -t 3000 '⚠️ No Need To Change Audio Sink' '   <i>Already using the single option available.</i>'
+  exit 1
+fi
+
+# Choose a new default sink from a prompt, then keep the ID only.
+SELECTION=$(echo "$SINKS" | wofi --dmenu -i -L "$((SINK_COUNT + 1))" -p 'Choose a default sink:' -r "echo -n '%s' | cut -z -d'|' -f2")
+[[ -z "$SELECTION" ]] && exit
+SINK_ID=$(echo "$SELECTION" | cut -d'|' -f1)
+SINK_DESC=$(echo "$SELECTION" | cut -d'|' -f2)
+
+# Update default sink and notify.
+pactl set-default-sink "$SINK_ID"
+notify-send -a 'pw-default-sink' -u low -t 3000 '🔊 Changed Audio Device' "   <i>$SINK_DESC</i>"
