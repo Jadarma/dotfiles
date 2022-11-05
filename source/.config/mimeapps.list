@@ -1,0 +1,7 @@
+[Default Applications]
+application/pdf=org.pwmt.zathura.desktop;
+inode/directory=pcmanfm.desktop;
+
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
