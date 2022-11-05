@@ -9,7 +9,7 @@
 # ---------------------------------------------------------------------------------------------------------------------
 
 # Refresh rate of the visualizers. A really high refresh rate may cause screen tearing. Default is 20.
-visualizer.fps=60
+visualizer.fps=144
 
 # Sets the audio sources to use. Currently available ones are "mpd", "pulse" and "alsa". Defaults to "mpd".
 audio.sources=pulse
@@ -48,7 +48,7 @@ visualizer.spectrum.reversed=false
 # More points spreads out the smoothing effect and increasing passes runs the smoother multiple times on reach run.
 # Defaults are points=3 and passes=1.
 visualizer.sgs.smoothing.points=3
-visualizer.sgs.smoothing.passes=1
+visualizer.sgs.smoothing.passes=2
 
 # Turns off overriding the user's terminal colors. This is true by default.
 colors.override.terminal=true
