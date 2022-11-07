@@ -40,8 +40,8 @@ window#waybar {
 }
 
 #workspaces button.focused {
-    padding-bottom: 0;
-    border-bottom: 2px solid @accent;
+    padding-top: 2px;
+    border-top: 2px solid @accent;
 }
 
 #workspaces button.urgent {
@@ -57,27 +57,27 @@ window#waybar {
 #clock {
     padding: 0 4px;
     margin: 0 4px;
-    border-bottom: 2px solid @red;
+    border-top: 2px solid @red;
 }
 
 /* Pulse Audio ----------------------------------------------------------------------------------------------------- */
 #pulseaudio {
     padding: 0 8px;
     margin: 0 4px;
-    border-bottom: 2px solid @yellow;
+    border-top: 2px solid @yellow;
 }
 
 #pulseaudio.muted {
     font-weight: 100;
     background-color: @backgroundDark;
-    border-bottom: 2px dotted @yellow;
+    border-top: 2px dotted @yellow;
 }
 
 /* CPU ------------------------------------------------------------------------------------------------------------- */
 #cpu {
     padding: 0 8px;
     margin: 0 4px;
-    border-bottom: 2px solid @blue;
+    border-top: 2px solid @blue;
 }
 
 #cpu.critical {
@@ -93,7 +93,7 @@ window#waybar {
 #memory {
     padding: 0 8px;
     margin: 0 4px;
-    border-bottom: 2px solid @magenta;
+    border-top: 2px solid @magenta;
 }
 
 #memory.critical {
